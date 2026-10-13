@@ -1,0 +1,1 @@
+# calibrate the glove for its initial position as well as min max for each finger
