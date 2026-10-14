@@ -70,9 +70,35 @@ same baud rate, and each motor on the bus must have a unique ID.
 
 - `driver/` — class-based motor drivers and read-only diagnostics; see
   [`driver/README.md`](driver/README.md).
-- `assets/` — project assets.
+- `simulation/glove/` — assembled MuJoCo glove model, mesh assets, and sidebar
+  control preview; see [`simulation/glove/README.md`](simulation/glove/README.md).
 - `reference/DOGlove/` — upstream reference code used during development.
 
 The `myglove` environment includes the core motor-driver dependencies, MuJoCo,
 and Matplotlib. ROS and learning dependencies can be added as those parts of the
 project are introduced.
+
+## MuJoCo glove preview
+
+From the repository root, use an environment with MuJoCo and NumPy installed:
+
+```bash
+conda activate myglove
+python3 simulation/glove/view_glove.py
+```
+
+The viewer starts paused. Click the 3D viewport and press **Space** to run;
+use the right **Control** panel to adjust joint targets in radians.
+**Backspace** resets the model, and **Shift+Tab** toggles the right sidebar.
+The most recently edited linkage control in each finger drives that mechanism;
+other linkage targets follow their current angles to allow closed-loop motion.
+
+The repaired assembly contains 24 hinge joints, 24 position actuators, and
+16 equality constraints for eight closed revolute connections. Gravity and
+contacts are disabled, and masses and inertias are approximate; this preview
+is intended for inspecting assembly and linkage motion. Repair details and
+validation results are included in `simulation/glove/`.
+
+The included `config.json` records the source Onshape assembly. Regenerating
+the model with onshape-to-robot overwrites the repaired XML; follow the
+closed-mate naming instructions in the simulation README before re-exporting.

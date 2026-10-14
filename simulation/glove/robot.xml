@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="glove_mujoco">
+  <compiler angle="radian" meshdir="assets" autolimits="true" />
+  <default>
+    <default class="glove_mujoco">
+      <joint frictionloss="0.1" armature="0.005" />
+      <position kp="50" dampratio="1" />
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom group="3" />
+      </default>
+    </default>
+  </default>
+  <worldbody>
+    <body name="手掌" pos="0 0 0" quat="1 0 0 0" childclass="glove_mujoco">
+      <inertial pos="-0.0107312352266 -0.00086987716982 0.00594997154633" mass="0.0272537491399" fullinertia="1.33905747353e-05 1.93746383157e-05 3.27166697548e-05 -5.1571563427e-07 -6.46942258002e-09 -3.27380312717e-10" />
+      <geom type="mesh" class="visual" pos="-0.0111572 -0.0337336 0.00739187" quat="1 0 0 0" mesh="手掌" material="手掌_material" />
+      <geom type="mesh" class="collision" pos="-0.0111572 -0.0337336 0.00739187" quat="1 0 0 0" mesh="手掌" material="手掌_material" />
+      <body name="part_6" pos="-0.0366456 0.0242739 0.00989187" quat="0 0.99989 -0.0148318 0">
+        <joint axis="0 0 1" name="j1" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <inertial pos="-0.00107060421395 -0.00117250795916 -0.0152244792686" mass="0.03232199604" fullinertia="7.69468907965e-06 4.16418327838e-06 7.93016380122e-06 -5.42585180091e-07 4.19945822108e-08 1.65179494678e-07" />
+        <geom type="mesh" class="visual" pos="-0.101992 -0.0209438 0" quat="0 1 0 0" mesh="part_6" material="part_6_material" />
+        <geom type="mesh" class="collision" pos="-0.101992 -0.0209438 0" quat="0 1 0 0" mesh="part_6" material="part_6_material" />
+        <geom type="mesh" class="visual" pos="-0.101992 -0.0209438 0" quat="0 1 0 0" mesh="part_6__2" material="part_6__2_material" />
+        <geom type="mesh" class="collision" pos="-0.101992 -0.0209438 0" quat="0 1 0 0" mesh="part_6__2" material="part_6__2_material" />
+        <geom type="mesh" class="visual" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="collision" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="collision" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="0.0024 0.0015 -0.0093" quat="0.707107 -0 0 -0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="0.0024 0.0015 -0.0093" quat="0.707107 -0 0 -0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="0.0024 0.0015 -0.0247" quat="0 -0.707107 -0.707107 0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="0.0024 0.0015 -0.0247" quat="0 -0.707107 -0.707107 0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="-0.0124 -0.0075 -0.017" quat="0.461484 -0.535754 0.535754 0.461484" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.0124 -0.0075 -0.017" quat="0.461484 -0.535754 0.535754 0.461484" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.0096 -0.015 -0.017" quat="0 -0.707107 0 -0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.0096 -0.015 -0.017" quat="0 -0.707107 0 -0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.008 -0.0075 -0.017" quat="0 0.707107 0 -0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.008 -0.0075 -0.017" quat="0 0.707107 0 -0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.0115 -0.0075 -0.017" quat="0 0.707107 0 -0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.0115 -0.0075 -0.017" quat="0 0.707107 0 -0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.008 -0.0075 -0.017" quat="0 0.707107 0 -0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.008 -0.0075 -0.017" quat="0 0.707107 0 -0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <body name="short_ab__19_248mm" pos="-0.0153 -0.0075 -0.017" quat="0.622037 0.336259 0.622037 0.336259">
+          <joint axis="0 0 1" name="j2" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="6.56514831804e-08 -0.00439863107987 -0.00125000002794" mass="0.000825334020509" fullinertia="5.11580016355e-08 1.01463564149e-08 6.04446351508e-08 2.5114947068e-14 -4.03896783473e-24 0" />
+          <geom type="mesh" class="visual" pos="-0.0345325 0.0267595 -0.0025" quat="0.707107 0.707107 0 0" mesh="short_ab__19_248mm" material="short_ab__19_248mm_material" />
+          <geom type="mesh" class="collision" pos="-0.0345325 0.0267595 -0.0025" quat="0.707107 0.707107 0 0" mesh="short_ab__19_248mm" material="short_ab__19_248mm_material" />
+        </body>
+        <body name="short_cdg" pos="-0.0145 -0.0238486 -0.00427861" quat="0.455136 -0.541157 0.455136 -0.541157">
+          <joint axis="0 0 1" name="j3" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="0.0149743044247 0.034113300692 -0.00125000002794" mass="0.00194822057959" fullinertia="7.42322534298e-07 2.83939469042e-07 1.02423260699e-06 -4.399131686e-07 0 -1.61558713389e-23" />
+          <geom type="mesh" class="visual" pos="0.0492624 -0.0198783 -0.0025" quat="0.707107 -0.707107 0 0" mesh="short_cdg" material="short_cdg_material" />
+          <geom type="mesh" class="collision" pos="0.0492624 -0.0198783 -0.0025" quat="0.707107 -0.707107 0 0" mesh="short_cdg" material="short_cdg_material" />
+          <body name="short_bc_17_285" pos="-0 0.013798 -0.0033" quat="0.899105 -0 -0 -0.437734">
+            <joint axis="0 0 1" name="j5" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="-0.00892841442015 -2.17673297442e-08 -0.00150000001304" mass="0.000631194830723" fullinertia="3.92577576911e-09 2.79536575681e-08 3.09326410747e-08 -1.99040334896e-20 0 0" />
+            <geom type="mesh" class="visual" pos="0.0321045 0.0554822 0" quat="0.707107 0.707107 0 -0" mesh="short_bc_17_285" material="short_bc_17_285_material" />
+            <geom type="mesh" class="collision" pos="0.0321045 0.0554822 0" quat="0.707107 0.707107 0 -0" mesh="short_bc_17_285" material="short_bc_17_285_material" />
+          </body>
+        </body>
+        <body name="short_ef_28_045" pos="-0.0115 -0.036169 -0.0131528" quat="0.602515 -0.370102 -0.602515 0.370102">
+          <joint axis="0 0 1" name="j6" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="-0.0140224712915 -1.02817357163e-08 -0.00124999997206" mass="0.000777591838965" fullinertia="4.68872181849e-09 6.94037364133e-08 7.3282466769e-08 -3.95818847804e-22 1.00974195868e-24 8.07793566946e-24" />
+          <geom type="mesh" class="visual" pos="-0.0181824 0.0218121 0" quat="0 1 0 0" mesh="short_ef_28_045" material="short_ef_28_045_material" />
+          <geom type="mesh" class="collision" pos="-0.0181824 0.0218121 0" quat="0 1 0 0" mesh="short_ef_28_045" material="short_ef_28_045_material" />
+          <body name="short_fgh" pos="-0.028045 0 -0" quat="0 0.345163 -0.938543 -0">
+            <joint axis="0 0 1" name="j7" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="0.0182710961913 0.0163789347946 -0.00125000002794" mass="0.00265735223427" fullinertia="3.97221038856e-07 9.29657082838e-07 1.32411004657e-06 3.61701132249e-07 -1.61558713389e-23 4.03896783473e-24" />
+            <geom type="mesh" class="visual" pos="0.0160404 0.00548616 -0.0025" quat="0.707107 -0.707107 0 -0" mesh="short_fgh" material="short_fgh_material" />
+            <geom type="mesh" class="collision" pos="0.0160404 0.00548616 -0.0025" quat="0.707107 -0.707107 0 -0" mesh="short_fgh" material="short_fgh_material" />
+          </body>
+        </body>
+      </body>
+      <body name="舵机装配图" pos="-0.0286456 -0.0256425 0.00989187" quat="0 0.999982 0.00601994 0">
+        <joint axis="0 0 1" name="j9" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <inertial pos="0.00171491355191 -0.0049991747623 -0.0146232080888" mass="0.0341674407133" fullinertia="1.68749667614e-05 4.65715352615e-06 1.71170929983e-05 2.01803575632e-06 -3.0410707748e-07 1.51795594859e-06" />
+        <geom type="mesh" class="visual" pos="0.101992 -0.0209438 0" quat="0 1 0 0" mesh="舵机底座右侧" material="舵机底座右侧_material" />
+        <geom type="mesh" class="collision" pos="0.101992 -0.0209438 0" quat="0 1 0 0" mesh="舵机底座右侧" material="舵机底座右侧_material" />
+        <geom type="mesh" class="visual" pos="0.0129 -0.0075 -0.017" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="collision" pos="0.0129 -0.0075 -0.017" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="visual" pos="0.01 0.0154 -0.0121" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.01 0.0154 -0.0121" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="0.0129 -0.0075 -0.017" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="collision" pos="0.0129 -0.0075 -0.017" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="visual" pos="0.01 -0.012 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.01 -0.012 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="-0.0024 0.0015 -0.0247" quat="0 0.707107 -0.707107 -0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="-0.0024 0.0015 -0.0247" quat="0 0.707107 -0.707107 -0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="-0.0024 0.0015 -0.0093" quat="0.707107 0 -0 0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="-0.0024 0.0015 -0.0093" quat="0.707107 0 -0 0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="0.01 0.0119 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.01 0.0119 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="0.0124 -0.0075 -0.017" quat="0.535754 -0.461484 -0.461484 -0.535754" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.0124 -0.0075 -0.017" quat="0.535754 -0.461484 -0.461484 -0.535754" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.01 0.0119 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.01 0.0119 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.0096 -0.015 -0.017" quat="0 -0.707107 -0 0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.0096 -0.015 -0.017" quat="0 -0.707107 -0 0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.01 0.0154 -0.0121" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.01 0.0154 -0.0121" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.008 -0.0075 -0.017" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.008 -0.0075 -0.017" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.01 -0.012 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.01 -0.012 -0.0254" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.01 -0.012 -0.0086" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.01 -0.012 -0.0086" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.0115 -0.0075 -0.017" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.0115 -0.0075 -0.017" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.008 -0.0075 -0.017" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.008 -0.0075 -0.017" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.01 -0.012 -0.0086" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.01 -0.012 -0.0086" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <body name="lang_ab_34_531mm" pos="0.0153 -0.0075 -0.017" quat="0.407188 -0.578098 -0.407188 0.578098">
+          <joint axis="0 0 1" name="j10" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="6.43766851424e-08 0.0106546680478 -0.00124999997206" mass="0.00111189047027" fullinertia="1.83891371231e-07 1.11552757315e-08 1.93888427775e-07 9.27992887816e-14 1.61558713389e-23 -1.61558713389e-23" />
+          <geom type="mesh" class="visual" pos="0.0442811 -0.0275763 0" quat="0.707107 -0.707107 0 -0" mesh="lang_ab_34_531mm" material="lang_ab_34_531mm_material" />
+          <geom type="mesh" class="collision" pos="0.0442811 -0.0275763 0" quat="0.707107 -0.707107 0 -0" mesh="lang_ab_34_531mm" material="lang_ab_34_531mm_material" />
+        </body>
+        <body name="lang_cdg" pos="0.0145 -0.0738492 -0.00427806" quat="0.459703 0.537283 -0.459703 -0.537283">
+          <joint axis="0 0 1" name="j12" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="0.0187534510014 -0.0250713727149 -0.00124999997206" mass="0.00204546770416" fullinertia="2.39448436881e-07 7.0582282719e-07 9.43140568641e-07 3.09416480131e-07 1.93870456067e-22 -1.13091099372e-22" />
+          <geom type="mesh" class="visual" pos="-0.0520759 0.0186752 0" quat="0.707107 0.707107 0 0" mesh="lang_cdg" material="lang_cdg_material" />
+          <geom type="mesh" class="collision" pos="-0.0520759 0.0186752 0" quat="0.707107 0.707107 0 0" mesh="lang_cdg" material="lang_cdg_material" />
+          <body name="lang_bc_54_193" pos="-0 -0.026287 -0.0033" quat="0.96655 0 -0 0.256478">
+            <joint axis="0 0 1" name="j13" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="-0.0274220193216 1.23060553345e-08 -0.00150000001304" mass="0.00173843451138" fullinertia="1.06614804516e-08 4.99717293796e-07 5.07771122435e-07 -2.47823828509e-16 3.23117426779e-23 0" />
+            <geom type="mesh" class="visual" pos="0.00527164 0.0369061 0" quat="0.707107 0.707107 -0 0" mesh="lang_bc_54_193" material="lang_bc_54_193_material" />
+            <geom type="mesh" class="collision" pos="0.00527164 0.0369061 0" quat="0.707107 0.707107 -0 0" mesh="lang_bc_54_193" material="lang_bc_54_193_material" />
+          </body>
+        </body>
+        <body name="lang_ef_36_549" pos="0.0115 -0.0905058 -0.00662398" quat="0.594574 -0.382729 0.594574 -0.382729">
+          <joint axis="0 0 1" name="j14" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="0.0182744879404 1.41766768138e-10 -0.00124999997206" mass="0.000990191864674" fullinertia="5.93331818051e-09 1.38039711198e-07 1.42941579565e-07 7.52257759219e-23 2.01948391737e-24 -2.52435489671e-25" />
+          <geom type="mesh" class="visual" pos="0.0132489 0.00082647 0" quat="0 1 0 0" mesh="lang_ef_36_549" material="lang_ef_36_549_material" />
+          <geom type="mesh" class="collision" pos="0.0132489 0.00082647 0" quat="0 1 0 0" mesh="lang_ef_36_549" material="lang_ef_36_549_material" />
+          <body name="lang_fgh" pos="0.036549 -0 0" quat="0 0.983606 -0.180329 0">
+            <joint axis="0 0 1" name="j15" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="0.0154073120349 -0.0077289435304 -0.00124999997206" mass="0.00211529398642" fullinertia="2.73670053012e-07 4.65353204389e-07 7.36819826264e-07 -2.73474051522e-07 1.61558713389e-23 3.23117426779e-23" />
+            <geom type="mesh" class="visual" pos="0.0345483 -0.0544694 -0" quat="0.707107 0.707107 -0 -0" mesh="lang_fgh" material="lang_fgh_material" />
+            <geom type="mesh" class="collision" pos="0.0345483 -0.0544694 -0" quat="0.707107 0.707107 -0 -0" mesh="lang_fgh" material="lang_fgh_material" />
+          </body>
+        </body>
+      </body>
+      <body name="part_1" pos="0.0233544 -0.0255578 0.00989187" quat="0 0.999862 0.016629 -0">
+        <joint axis="0 0 1" name="j17" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <inertial pos="0.00172969116235 -0.00513431087388 -0.0146103018872" mass="0.0341999854439" fullinertia="1.72856350452e-05 4.66383258844e-06 1.75283795742e-05 2.06736766632e-06 -3.08782720107e-07 1.56011008302e-06" />
+        <geom type="mesh" class="visual" pos="-0.014501 0.019999 0" quat="0 1 0 0" mesh="part_1" material="part_1_material" />
+        <geom type="mesh" class="collision" pos="-0.014501 0.019999 0" quat="0 1 0 0" mesh="part_1" material="part_1_material" />
+        <geom type="mesh" class="visual" pos="0.012901 -0.0075 -0.016999" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="collision" pos="0.012901 -0.0075 -0.016999" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="visual" pos="0.010001 0.0154 -0.012099" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.010001 0.0154 -0.012099" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="0.012901 -0.0075 -0.016999" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="collision" pos="0.012901 -0.0075 -0.016999" quat="0.5 0.5 0.5 -0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="visual" pos="0.010001 -0.012 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.010001 -0.012 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="-0.002399 0.0015 -0.024699" quat="0 -0.707107 0.707107 -0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="-0.002399 0.0015 -0.024699" quat="0 -0.707107 0.707107 -0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="-0.002399 0.0015 -0.009299" quat="0.707107 -0 -0 0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="-0.002399 0.0015 -0.009299" quat="0.707107 -0 -0 0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="0.010001 0.0119 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.010001 0.0119 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="0.012401 -0.0075 -0.016999" quat="0.535754 -0.461484 -0.461484 -0.535754" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.012401 -0.0075 -0.016999" quat="0.535754 -0.461484 -0.461484 -0.535754" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.010001 0.0119 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.010001 0.0119 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.009599 -0.015 -0.016999" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.009599 -0.015 -0.016999" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.010001 0.0154 -0.012099" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.010001 0.0154 -0.012099" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.008001 -0.0075 -0.016999" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.008001 -0.0075 -0.016999" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.010001 -0.012 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.010001 -0.012 -0.025399" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.010001 -0.012 -0.008599" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="0.010001 -0.012 -0.008599" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.011499 -0.0075 -0.016999" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.011499 -0.0075 -0.016999" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.008001 -0.0075 -0.016999" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.008001 -0.0075 -0.016999" quat="0 0.707107 0 0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="visual" pos="0.010001 -0.012 -0.008599" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="0.010001 -0.012 -0.008599" quat="0.5 0.5 0.5 -0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <body name="part_1_2" pos="0.015301 -0.0075 -0.016999" quat="0.323166 -0.628939 -0.323166 0.628939">
+          <joint axis="0 0 1" name="j18" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="-2.37369088517e-07 0.0115981493563 -0.00150000001304" mass="0.0013830811789" fullinertia="2.54989177025e-07 1.38754908774e-08 2.66790046098e-07 4.55542413836e-12 2.01948391737e-24 -8.07793566946e-24" />
+          <geom type="mesh" class="visual" pos="-0.00799845 0.0397 0" quat="0 1 0 0" mesh="part_1__2" material="part_1__2_material" />
+          <geom type="mesh" class="collision" pos="-0.00799845 0.0397 0" quat="0 1 0 0" mesh="part_1__2" material="part_1__2_material" />
+        </body>
+        <body name="part_1_3" pos="0.014491 -0.0738491 -0.00427712" quat="0.553401 0.440167 -0.553401 -0.440167">
+          <joint axis="0 0 1" name="j20" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="0.0196607750118 -0.0250214150632 -0.00149999998696" mass="0.00248882770123" fullinertia="2.84600059899e-07 9.09341205741e-07 1.19020802402e-06 3.85906396755e-07 1.61558713389e-23 2.42338070084e-23" />
+          <geom type="mesh" class="visual" pos="-0.00399899 -0.040142 -0.003" quat="1 -0 0 -0" mesh="part_1__3" material="part_1__3_material" />
+          <geom type="mesh" class="collision" pos="-0.00399899 -0.040142 -0.003" quat="1 -0 0 -0" mesh="part_1__3" material="part_1__3_material" />
+          <body name="part_1_4" pos="-0 -0.025787 -0.003" quat="1 -0 0 -0">
+            <joint axis="0 0 1" name="j21" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="-0.0270260984945 -0.00281426756871 -0.00231000001304" mass="0.00171971811923" fullinertia="1.56281166601e-08 4.8054007417e-07 4.93588613607e-07 -4.90212918482e-08 -4.18316842591e-25 4.01724684196e-24" />
+            <geom type="mesh" class="visual" pos="-0.0577949 -0.00199758 -0.00081" quat="0 0.998655 0.0518549 0" mesh="part_1__4" material="part_1__4_material" />
+            <geom type="mesh" class="collision" pos="-0.0577949 -0.00199758 -0.00081" quat="0 0.998655 0.0518549 0" mesh="part_1__4" material="part_1__4_material" />
+          </body>
+        </body>
+        <body name="part_1_6" pos="0.011501 -0.0906633 -0.00380174" quat="0.516169 0.483291 0.516169 0.483291">
+          <joint axis="0 0 1" name="j22" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="-0.0194492308684 3.27894081999e-08 -0.00149999998696" mass="0.00125580358233" fullinertia="7.77931581922e-09 1.95185639436e-07 2.01081249849e-07 3.86023448966e-11 -2.42338070084e-23 -2.01948391737e-24" />
+          <geom type="mesh" class="visual" pos="-0.042897 -0.003999 -0.003" quat="1 -0 0 -0" mesh="part_1__5" material="part_1__5_material" />
+          <geom type="mesh" class="collision" pos="-0.042897 -0.003999 -0.003" quat="1 -0 0 -0" mesh="part_1__5" material="part_1__5_material" />
+          <body name="part_1_7" pos="-0.038898 0 -1e-05" quat="0 0.0864715 0.996254 -0">
+            <joint axis="0 0 1" name="j24" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="0.017141492632 -0.00849917028714 -0.00149999998696" mass="0.00257897659405" fullinertia="2.91399015585e-07 6.87094449289e-07 9.74624999916e-07 -3.31273715316e-07 -1.61558713389e-23 -6.46234853557e-23" />
+            <geom type="mesh" class="visual" pos="-0.003999 -0.030582 -0.003" quat="1 0 -0 0" mesh="part_1__6" material="part_1__6_material" />
+            <geom type="mesh" class="collision" pos="-0.003999 -0.030582 -0.003" quat="1 0 -0 0" mesh="part_1__6" material="part_1__6_material" />
+          </body>
+        </body>
+      </body>
+      <body name="part_1_11" pos="0.0153544 0.0242739 0.00989187" quat="0 0.999991 0.00415111 -0">
+        <joint axis="0 0 1" name="j25" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <inertial pos="-0.00136648113454 -0.00194163933265 -0.0149316898874" mass="0.029343882325" fullinertia="7.03854879261e-06 3.83850286753e-06 7.40780023861e-06 -7.53324864807e-07 7.28506962695e-08 2.85046671159e-07" />
+        <geom type="mesh" class="visual" pos="-0.0145 0.02 -0" quat="0 1 0 0" mesh="part_1__7" material="part_1__7_material" />
+        <geom type="mesh" class="collision" pos="-0.0145 0.02 -0" quat="0 1 0 0" mesh="part_1__7" material="part_1__7_material" />
+        <geom type="mesh" class="visual" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="collision" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8" material="bts2_m2_6x8_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="collision" pos="-0.0129 -0.0075 -0.017" quat="0.5 0.5 -0.5 0.5" mesh="bts2_m2_6x8__2" material="bts2_m2_6x8__2_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="0.0024 0.0015 -0.0093" quat="0.707107 -0 0 -0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="0.0024 0.0015 -0.0093" quat="0.707107 -0 0 -0.707107" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="0.0024 0.0015 -0.0247" quat="0 -0.707107 -0.707107 0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="collision" pos="0.0024 0.0015 -0.0247" quat="0 -0.707107 -0.707107 0" mesh="b3b_eh" material="b3b_eh_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="visual" pos="-0.0124 -0.0075 -0.017" quat="0.461484 -0.535754 0.535754 0.461484" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.0124 -0.0075 -0.017" quat="0.461484 -0.535754 0.535754 0.461484" mesh="dc15_a01_horn_dummy" material="dc15_a01_horn_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0119 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.0096 -0.015 -0.017" quat="0 0.707107 -0 0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.0096 -0.015 -0.017" quat="0 0.707107 -0 0.707107" mesh="dc15_a01_led_cap2_dummy" material="dc15_a01_led_cap2_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 0.0154 -0.0219" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.008 -0.0075 -0.017" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.008 -0.0075 -0.017" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_case_m_dummy" material="dc15_a01_case_m_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0086" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10__2" material="phs_1_7x20_5_dc10__2_material" />
+        <geom type="mesh" class="visual" pos="0.0115 -0.0075 -0.017" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="collision" pos="0.0115 -0.0075 -0.017" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_case_b_dummy" material="dc15_a01_case_b_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.008 -0.0075 -0.017" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="collision" pos="-0.008 -0.0075 -0.017" quat="0 -0.707107 0 0.707107" mesh="dc15_a01_case_f_dummy" material="dc15_a01_case_f_dummy_material" />
+        <geom type="mesh" class="visual" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <geom type="mesh" class="collision" pos="-0.01 -0.012 -0.0254" quat="0.5 0.5 -0.5 0.5" mesh="phs_1_7x20_5_dc10" material="phs_1_7x20_5_dc10_material" />
+        <body name="part_1_12" pos="-0.0153 -0.0075 -0.017" quat="0.324349 -0.628329 0.324349 -0.628329">
+          <joint axis="0 0 1" name="j26" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="2.00052412275e-08 0.00383824444467 -0.00150000001304" mass="0.000956651016084" fullinertia="5.2573829423e-08 1.22760349674e-08 6.34148878413e-08 -4.27646484967e-14 4.03896783473e-24 -4.03896783473e-24" />
+          <geom type="mesh" class="visual" pos="-0.00799939 0.020748 0" quat="0 1 0 0" mesh="part_1__8" material="part_1__8_material" />
+          <geom type="mesh" class="collision" pos="-0.00799939 0.020748 0" quat="0 1 0 0" mesh="part_1__8" material="part_1__8_material" />
+        </body>
+        <body name="part_1_13" pos="-0.0145 -0.0238486 -0.00427861" quat="0.419966 -0.568884 0.419966 -0.568884">
+          <joint axis="0 0 1" name="j28" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="0.0149743165474 0.0341133301151 -0.00150000001304" mass="0.00233786509936" fullinertia="8.91322975166e-07 3.41263163288e-07 1.22907934074e-06 -5.27895877732e-07 4.03896783473e-23 -1.4540284205e-22" />
+          <geom type="mesh" class="visual" pos="-0.004 0.0694841 0" quat="0 1 0 0" mesh="part_1__9" material="part_1__9_material" />
+          <geom type="mesh" class="collision" pos="-0.004 0.0694841 0" quat="0 1 0 0" mesh="part_1__9" material="part_1__9_material" />
+          <body name="part_1_14" pos="-0 0.013798 -0.003" quat="1 0 -0 0">
+            <joint axis="0 0 1" name="j29" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="-0.0071322602011 0.00537104268142 -0.00229999998696" mass="0.000631195015814" fullinertia="1.26209363818e-08 1.92585052602e-08 3.09326491018e-08 1.15464482256e-08 -3.2264305815e-24 2.42969275275e-24" />
+            <geom type="mesh" class="visual" pos="-0.0194086 0.0096085 -0.0038" quat="0.948374 -0 0 -0.317155" mesh="part_1__10" material="part_1__10_material" />
+            <geom type="mesh" class="collision" pos="-0.0194086 0.0096085 -0.0038" quat="0.948374 -0 0 -0.317155" mesh="part_1__10" material="part_1__10_material" />
+          </body>
+        </body>
+        <body name="part_1_16" pos="-0.0115 -0.043606 -0.0100175" quat="0.408198 0.577386 -0.408198 -0.577386">
+          <joint axis="0 0 1" name="j30" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+          <inertial pos="0.016327499231 1.7089175474e-10 -0.00149999998696" mass="0.00107141034115" fullinertia="6.68163083056e-09 1.23402743256e-07 1.28477258547e-07 2.22556982775e-17 -1.61558713389e-23 0" />
+          <geom type="mesh" class="visual" pos="-0.00399921 -0.004 -0.003" quat="1 0 -0 0" mesh="part_1__11" material="part_1__11_material" />
+          <geom type="mesh" class="collision" pos="-0.00399921 -0.004 -0.003" quat="1 0 -0 0" mesh="part_1__11" material="part_1__11_material" />
+          <body name="part_1_17" pos="0.032655 -0 0" quat="0 0.978561 0.205957 -0">
+            <joint axis="0 0 1" name="j31" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+            <inertial pos="0.0204351961405 0.0161214717393 -0.00150000001304" mass="0.003168513223" fullinertia="3.91981843267e-07 1.31433604405e-06 1.7015651174e-06 4.04321120416e-07 4.84676140168e-23 -1.4540284205e-22" />
+            <geom type="mesh" class="visual" pos="-0.004 0.0395967 0" quat="0 1 0 0" mesh="part_1__12" material="part_1__12_material" />
+            <geom type="mesh" class="collision" pos="-0.004 0.0395967 0" quat="0 1 0 0" mesh="part_1__12" material="part_1__12_material" />
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <asset>
+    <mesh file="手掌.stl" />
+    <mesh file="bts2_m2_6x8.stl" />
+    <mesh file="dc15_a01_case_b_dummy.stl" />
+    <mesh file="short_fgh.stl" />
+    <mesh file="dc15_a01_case_f_dummy.stl" />
+    <mesh file="part_1__11.stl" />
+    <mesh file="舵机底座右侧.stl" />
+    <mesh file="part_6__2.stl" />
+    <mesh file="dc15_a01_led_cap2_dummy.stl" />
+    <mesh file="bts2_m2_6x8__2.stl" />
+    <mesh file="part_1__9.stl" />
+    <mesh file="phs_1_7x20_5_dc10.stl" />
+    <mesh file="part_1__5.stl" />
+    <mesh file="b3b_eh.stl" />
+    <mesh file="lang_cdg.stl" />
+    <mesh file="short_cdg.stl" />
+    <mesh file="part_1__7.stl" />
+    <mesh file="part_1__4.stl" />
+    <mesh file="part_1__12.stl" />
+    <mesh file="lang_bc_54_193.stl" />
+    <mesh file="part_1__10.stl" />
+    <mesh file="lang_fgh.stl" />
+    <mesh file="lang_ef_36_549.stl" />
+    <mesh file="part_1__2.stl" />
+    <mesh file="part_1__8.stl" />
+    <mesh file="part_1__3.stl" />
+    <mesh file="short_ab__19_248mm.stl" />
+    <mesh file="short_bc_17_285.stl" />
+    <mesh file="part_6.stl" />
+    <mesh file="dc15_a01_case_m_dummy.stl" />
+    <mesh file="dc15_a01_horn_dummy.stl" />
+    <mesh file="part_1__6.stl" />
+    <mesh file="phs_1_7x20_5_dc10__2.stl" />
+    <mesh file="lang_ab_34_531mm.stl" />
+    <mesh file="part_1.stl" />
+    <mesh file="short_ef_28_045.stl" />
+    <material name="手掌_material" rgba="0.231373 0.380392 0.705882 1" />
+    <material name="part_6_material" rgba="0.768627 0.886275 0.952941 1" />
+    <material name="part_6__2_material" rgba="0.768627 0.886275 0.952941 1" />
+    <material name="bts2_m2_6x8_material" rgba="0.768627 0.886275 0.952941 1" />
+    <material name="phs_1_7x20_5_dc10_material" rgba="0.615686 0.811765 0.929412 1" />
+    <material name="bts2_m2_6x8__2_material" rgba="0.917647 0.917647 0.917647 1" />
+    <material name="b3b_eh_material" rgba="0.231373 0.380392 0.705882 1" />
+    <material name="dc15_a01_horn_dummy_material" rgba="0.231373 0.380392 0.705882 1" />
+    <material name="phs_1_7x20_5_dc10__2_material" rgba="0.980392 0.713725 0.00392157 1" />
+    <material name="dc15_a01_led_cap2_dummy_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="dc15_a01_case_m_dummy_material" rgba="0.972549 0.529412 0.00392157 1" />
+    <material name="dc15_a01_case_b_dummy_material" rgba="0.917647 0.917647 0.917647 1" />
+    <material name="dc15_a01_case_f_dummy_material" rgba="0.768627 0.886275 0.952941 1" />
+    <material name="short_ab__19_248mm_material" rgba="0.231373 0.380392 0.705882 1" />
+    <material name="short_cdg_material" rgba="0.615686 0.811765 0.929412 1" />
+    <material name="short_bc_17_285_material" rgba="0.615686 0.811765 0.929412 1" />
+    <material name="short_ef_28_045_material" rgba="0.615686 0.811765 0.929412 1" />
+    <material name="short_fgh_material" rgba="0.615686 0.811765 0.929412 1" />
+    <material name="舵机底座右侧_material" rgba="0.768627 0.886275 0.952941 1" />
+    <material name="lang_ab_34_531mm_material" rgba="0.615686 0.811765 0.929412 1" />
+    <material name="lang_cdg_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="lang_bc_54_193_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="lang_ef_36_549_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="lang_fgh_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="part_1_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="part_1__2_material" rgba="0.972549 0.529412 0.00392157 1" />
+    <material name="part_1__3_material" rgba="0.647059 0.647059 0.647059 1" />
+    <material name="part_1__4_material" rgba="0.917647 0.917647 0.917647 1" />
+    <material name="part_1__5_material" rgba="0.768627 0.886275 0.952941 1" />
+    <material name="part_1__6_material" rgba="0.498039 0.498039 0.498039 1" />
+    <material name="part_1__7_material" rgba="0.972549 0.529412 0.00392157 1" />
+    <material name="part_1__8_material" rgba="0.498039 0.498039 0.498039 1" />
+    <material name="part_1__9_material" rgba="0.972549 0.529412 0.00392157 1" />
+    <material name="part_1__10_material" rgba="0.980392 0.713725 0.00392157 1" />
+    <material name="part_1__11_material" rgba="0.917647 0.917647 0.917647 1" />
+    <material name="part_1__12_material" rgba="0.917647 0.917647 0.917647 1" />
+  </asset>
+  <actuator>
+    <position name="j1" joint="j1" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j2" joint="j2" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j3" joint="j3" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j5" joint="j5" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j6" joint="j6" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j7" joint="j7" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j9" joint="j9" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j10" joint="j10" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j12" joint="j12" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j13" joint="j13" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j14" joint="j14" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j15" joint="j15" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j17" joint="j17" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j18" joint="j18" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j20" joint="j20" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j21" joint="j21" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j22" joint="j22" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j24" joint="j24" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j25" joint="j25" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j26" joint="j26" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j28" joint="j28" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j29" joint="j29" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j30" joint="j30" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j31" joint="j31" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+  </actuator>
+  <equality>
+    <connect name="closing_j4_1" body1="short_bc_17_285" body2="short_ab__19_248mm" anchor="-0.017285 -6.93889390391e-18 6.93889390391e-18" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j4_2" body1="short_bc_17_285" body2="short_ab__19_248mm" anchor="-0.017285 -6.93889390391e-18 -0.01" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j8_1" body1="short_fgh" body2="short_cdg" anchor="1.38777878078e-17 0.037927 -0.0025" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j8_2" body1="short_fgh" body2="short_cdg" anchor="3.46944695195e-18 0.037927 0.0075" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j11_1" body1="lang_bc_54_193" body2="lang_ab_34_531mm" anchor="-0.054193 6.93889390391e-18 0" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j11_2" body1="lang_bc_54_193" body2="lang_ab_34_531mm" anchor="-0.054193 6.93889390391e-18 -0.01" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j16_1" body1="lang_fgh" body2="lang_cdg" anchor="-7.8062556419e-18 -0.026983 -0.0025" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j16_2" body1="lang_fgh" body2="lang_cdg" anchor="-3.46944695195e-18 -0.026983 0.0075" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j19_1" body1="part_1_4" body2="part_1_2" anchor="-0.0534033 -0.00556089 -0.00081" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j19_2" body1="part_1_4" body2="part_1_2" anchor="-0.0534033 -0.00556089 -0.01081" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j23_1" body1="part_1_7" body2="part_1_3" anchor="3.46944695195e-18 -0.026583 -0.003" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j23_2" body1="part_1_7" body2="part_1_3" anchor="3.46944695195e-18 -0.026583 0.007" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j27_1" body1="part_1_14" body2="part_1_12" anchor="-0.0138077 0.010398 -0.0008" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j27_2" body1="part_1_14" body2="part_1_12" anchor="-0.0138077 0.010398 -0.0108" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j32_1" body1="part_1_17" body2="part_1_13" anchor="1.64798730218e-17 0.035597 -0.003" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+    <connect name="closing_j32_2" body1="part_1_17" body2="part_1_13" anchor="1.64798730218e-17 0.035597 0.007" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />
+  </equality>
+  <option timestep="0.001" integrator="implicitfast" solver="Newton" iterations="100" tolerance="1e-10" gravity="0 0 0">
+    <flag contact="disable" />
+  </option>
+</mujoco>

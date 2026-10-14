@@ -1,0 +1,17 @@
+{
+  "url": "https://cad.onshape.com/documents/1142f5b2eafb3feca857af3d/w/685064653818829e82081d78/e/bb2b36feea1fcf30372933d0",
+  "output_format": "mujoco",
+  "output_filename": "robot",
+  "freejoint": false,
+  "joint_properties": {
+    "*": {
+      "actuated": false
+    },
+    "j*": {
+      "actuated": true,
+      "type": "position",
+      "kp": 1.0,
+      "dampratio": 1.0
+    }
+  }
+}
