@@ -9,10 +9,10 @@ conda activate myglove
 python3 simulation/glove/view_glove.py
 ```
 
-- 启动时暂停；空格切换运行/暂停。
+- 启动后直接运行，初始视角自动居中并拉近；空格切换暂停/运行。
 - Backspace 复位；Shift+Tab 显示右侧面板；展开 Control。
 - 使用 Control 控制目标角度，单位为弧度。Joint 面板直接改状态，可能暂时破坏闭环，不建议用于检查联动。
-- 每套机构有一个基座侧摆滑块（j1、j9、j17、j25）和多个连杆滑块。
+- 每套机构有一个MCP 外展／内收滑块（名称见下表）和多个连杆滑块。
 - 在同一套机构中，最近操作的连杆滑块作为驱动输入；其他连杆的控制目标自动跟随其当前角度，避免多个位置控制器互相阻碍闭环运动。
 - 目标角度不一定都能实现，仍受闭环几何和机构奇异位置约束。
 
@@ -23,6 +23,23 @@ python -m mujoco.viewer --mjcf=simulation/glove/scene.xml
 ```
 
 标准查看器同时保持所有控制目标；它不会自动执行上述跟随逻辑。
+
+## 外展／内收关节命名
+
+XML 中的关节名称、驱动器名称及其 joint 引用使用相同名称：
+
+| 原编号 | 手指 | 当前名称 |
+| --- | --- | --- |
+| j1 | 第2指：食指 | index_mcp_abduction |
+| j9 | 第3指：中指 | middle_mcp_abduction |
+| j25 | 第4指：无名指 | ring_mcp_abduction |
+| j17 | 第5指：小指 | little_mcp_abduction |
+
+这是直接修改 MuJoCo XML，尚未修改 Onshape 的配合名称。
+`config.json` 和验证报告保留导出时的原始编号。重新导出会覆盖 XML 中的命名；
+若在 Onshape 中使用新名称，需要给配合名称加 `dof_`，并在导出配置中
+为这些新名称设置 `actuated: true`（原来的 `j*` 规则不匹配新名称）。
+控制脚本的 `FINGER_CONTROLS` 显式列出每根手指的控制器，后续改连杆名称时也应同步更新。
 
 ## 修正内容
 
@@ -57,10 +74,10 @@ python -m mujoco.viewer --mjcf=simulation/glove/scene.xml
 
 闭合连接作为 equality，而非独立 hinge/actuator，因此没有对应的独立 Control 滑块；机构实物连接仍然保留。保留下来的控制器包括：
 
-j1, j2, j3, j5, j6, j7,
-j9, j10, j12, j13, j14, j15,
-j17, j18, j20, j21, j22, j24,
-j25, j26, j28, j29, j30, j31。
+index_mcp_abduction, j2, j3, j5, j6, j7,
+middle_mcp_abduction, j10, j12, j13, j14, j15,
+little_mcp_abduction, j18, j20, j21, j22, j24,
+ring_mcp_abduction, j26, j28, j29, j30, j31。
 
 ## 验证
 

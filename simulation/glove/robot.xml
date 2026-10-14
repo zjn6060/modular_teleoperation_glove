@@ -19,7 +19,7 @@
       <geom type="mesh" class="visual" pos="-0.0111572 -0.0337336 0.00739187" quat="1 0 0 0" mesh="手掌" material="手掌_material" />
       <geom type="mesh" class="collision" pos="-0.0111572 -0.0337336 0.00739187" quat="1 0 0 0" mesh="手掌" material="手掌_material" />
       <body name="part_6" pos="-0.0366456 0.0242739 0.00989187" quat="0 0.99989 -0.0148318 0">
-        <joint axis="0 0 1" name="j1" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <joint axis="0 0 1" name="index_mcp_abduction" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
         <inertial pos="-0.00107060421395 -0.00117250795916 -0.0152244792686" mass="0.03232199604" fullinertia="7.69468907965e-06 4.16418327838e-06 7.93016380122e-06 -5.42585180091e-07 4.19945822108e-08 1.65179494678e-07" />
         <geom type="mesh" class="visual" pos="-0.101992 -0.0209438 0" quat="0 1 0 0" mesh="part_6" material="part_6_material" />
         <geom type="mesh" class="collision" pos="-0.101992 -0.0209438 0" quat="0 1 0 0" mesh="part_6" material="part_6_material" />
@@ -91,7 +91,7 @@
         </body>
       </body>
       <body name="舵机装配图" pos="-0.0286456 -0.0256425 0.00989187" quat="0 0.999982 0.00601994 0">
-        <joint axis="0 0 1" name="j9" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <joint axis="0 0 1" name="middle_mcp_abduction" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
         <inertial pos="0.00171491355191 -0.0049991747623 -0.0146232080888" mass="0.0341674407133" fullinertia="1.68749667614e-05 4.65715352615e-06 1.71170929983e-05 2.01803575632e-06 -3.0410707748e-07 1.51795594859e-06" />
         <geom type="mesh" class="visual" pos="0.101992 -0.0209438 0" quat="0 1 0 0" mesh="舵机底座右侧" material="舵机底座右侧_material" />
         <geom type="mesh" class="collision" pos="0.101992 -0.0209438 0" quat="0 1 0 0" mesh="舵机底座右侧" material="舵机底座右侧_material" />
@@ -161,7 +161,7 @@
         </body>
       </body>
       <body name="part_1" pos="0.0233544 -0.0255578 0.00989187" quat="0 0.999862 0.016629 -0">
-        <joint axis="0 0 1" name="j17" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <joint axis="0 0 1" name="little_mcp_abduction" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
         <inertial pos="0.00172969116235 -0.00513431087388 -0.0146103018872" mass="0.0341999854439" fullinertia="1.72856350452e-05 4.66383258844e-06 1.75283795742e-05 2.06736766632e-06 -3.08782720107e-07 1.56011008302e-06" />
         <geom type="mesh" class="visual" pos="-0.014501 0.019999 0" quat="0 1 0 0" mesh="part_1" material="part_1_material" />
         <geom type="mesh" class="collision" pos="-0.014501 0.019999 0" quat="0 1 0 0" mesh="part_1" material="part_1_material" />
@@ -231,7 +231,7 @@
         </body>
       </body>
       <body name="part_1_11" pos="0.0153544 0.0242739 0.00989187" quat="0 0.999991 0.00415111 -0">
-        <joint axis="0 0 1" name="j25" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
+        <joint axis="0 0 1" name="ring_mcp_abduction" type="hinge" damping="0.002" frictionloss="0" armature="0.00001" />
         <inertial pos="-0.00136648113454 -0.00194163933265 -0.0149316898874" mass="0.029343882325" fullinertia="7.03854879261e-06 3.83850286753e-06 7.40780023861e-06 -7.53324864807e-07 7.28506962695e-08 2.85046671159e-07" />
         <geom type="mesh" class="visual" pos="-0.0145 0.02 -0" quat="0 1 0 0" mesh="part_1__7" material="part_1__7_material" />
         <geom type="mesh" class="collision" pos="-0.0145 0.02 -0" quat="0 1 0 0" mesh="part_1__7" material="part_1__7_material" />
@@ -377,25 +377,25 @@
     <material name="part_1__12_material" rgba="0.917647 0.917647 0.917647 1" />
   </asset>
   <actuator>
-    <position name="j1" joint="j1" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="index_mcp_abduction" joint="index_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j2" joint="j2" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j3" joint="j3" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j5" joint="j5" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j6" joint="j6" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j7" joint="j7" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j9" joint="j9" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="middle_mcp_abduction" joint="middle_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j10" joint="j10" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j12" joint="j12" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j13" joint="j13" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j14" joint="j14" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j15" joint="j15" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j17" joint="j17" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="little_mcp_abduction" joint="little_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j18" joint="j18" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j20" joint="j20" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j21" joint="j21" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j22" joint="j22" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j24" joint="j24" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j25" joint="j25" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="ring_mcp_abduction" joint="ring_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j26" joint="j26" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j28" joint="j28" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
     <position name="j29" joint="j29" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />

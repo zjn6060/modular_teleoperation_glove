@@ -7,20 +7,39 @@ import mujoco
 import mujoco.viewer
 
 
+FINGER_CONTROLS = {
+    'index': ('index_mcp_abduction', 'j2', 'j3', 'j5', 'j6', 'j7'),
+    'middle': ('middle_mcp_abduction', 'j10', 'j12', 'j13', 'j14', 'j15'),
+    'little': ('little_mcp_abduction', 'j18', 'j20', 'j21', 'j22', 'j24'),
+    'ring': ('ring_mcp_abduction', 'j26', 'j28', 'j29', 'j30', 'j31'),
+}
+
+
+def control_groups(names):
+    """Resolve each finger's abduction control and linkage followers by name."""
+    indices = {name: i for i, name in enumerate(names)}
+    expected = {name for controls in FINGER_CONTROLS.values() for name in controls}
+    if set(indices) != expected or len(indices) != len(names):
+        raise ValueError('Actuator names do not match FINGER_CONTROLS.')
+    lateral = {indices[controls[0]] for controls in FINGER_CONTROLS.values()}
+    groups = {indices[name]: finger for finger, controls in FINGER_CONTROLS.items()
+              for name in controls}
+    defaults = {finger: indices[controls[1]]
+                for finger, controls in FINGER_CONTROLS.items()}
+    return lateral, groups, defaults
+
+
 def main():
     model = mujoco.MjModel.from_xml_path(str(Path(__file__).resolve().parent / 'scene.xml'))
     data = mujoco.MjData(model)
     mujoco.mj_forward(model, data)
     names = [mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_ACTUATOR, i) for i in range(model.nu)]
     qadr = model.jnt_qposadr[model.actuator_trnid[:, 0]]
-    numbers = [int(n[1:]) for n in names]
-    lateral = {i for i, n in enumerate(numbers) if n in (1, 9, 17, 25)}
-    groups = {i: (n - 1) // 8 for i, n in enumerate(numbers)}
-    defaults = {g: names.index('j' + str(2 + 8 * g)) for g in range(4)}
+    lateral, groups, defaults = control_groups(names)
     drivers = dict(defaults)
     targets = np.zeros(model.nu)
     displayed = data.ctrl.copy()
-    events = {'paused': True, 'reset': False}
+    events = {'paused': False, 'reset': False}
 
     def key_callback(key):
         if key == 32:
@@ -29,12 +48,17 @@ def main():
             events['reset'] = True
 
     print('Loaded: 24 controls; 8 closed revolute connections.')
-    print('Starts paused. Space: run/pause. Backspace: reset. Shift+Tab: right sidebar.')
+    print('Starts running. Space: pause/run. Backspace: reset. Shift+Tab: right sidebar.')
     print('Use Control sliders. Within each finger, the most recently edited linkage slider drives; other linkage targets follow.')
     print('Approximate inertias; gravity and contacts disabled for mechanism preview.')
 
     with mujoco.viewer.launch_passive(model, data, key_callback=key_callback,
                                      show_left_ui=True, show_right_ui=True) as viewer:
+        with viewer.lock():
+            viewer.cam.lookat[:] = model.stat.center
+            viewer.cam.distance = 1.05 * model.stat.extent
+            viewer.cam.azimuth = model.vis.global_.azimuth
+            viewer.cam.elevation = model.vis.global_.elevation
         while viewer.is_running():
             started = time.monotonic()
             viewer.sync()

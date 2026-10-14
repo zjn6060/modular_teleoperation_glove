@@ -87,7 +87,7 @@ conda activate myglove
 python3 simulation/glove/view_glove.py
 ```
 
-The viewer starts paused. Click the 3D viewport and press **Space** to run;
+The viewer starts running with a closer, centered camera. Press **Space** to pause/resume;
 use the right **Control** panel to adjust joint targets in radians.
 **Backspace** resets the model, and **Shift+Tab** toggles the right sidebar.
 The most recently edited linkage control in each finger drives that mechanism;
