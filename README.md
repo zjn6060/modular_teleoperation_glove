@@ -1,7 +1,7 @@
-# Modular Teleoperation Glove
+# TeleGlove
 
-This repository contains the hardware drivers and supporting software for the
-modular teleoperation glove. The first driver targets ROBOTIS DYNAMIXEL XL330
+TeleGlove is a modular teleoperation glove project with hardware drivers and
+supporting software. The first driver targets ROBOTIS DYNAMIXEL XL330
 motors and is being adapted from the DOGlove reference implementation under
 `reference/DOGlove`.
 
@@ -72,6 +72,8 @@ same baud rate, and each motor on the bus must have a unique ID.
   [`driver/README.md`](driver/README.md).
 - `simulation/glove/` — assembled MuJoCo glove model, mesh assets, and sidebar
   control preview; see [`simulation/glove/README.md`](simulation/glove/README.md).
+- `simulation/robots/tiangong/` — Tiangong TG2 URDF models, mesh assets, and a
+  MuJoCo target model; see [`simulation/robots/tiangong/README.md`](simulation/robots/tiangong/README.md).
 - `reference/DOGlove/` — upstream reference code used during development.
 
 The `myglove` environment includes the core motor-driver dependencies, MuJoCo,
@@ -102,3 +104,17 @@ validation results are included in `simulation/glove/`.
 The included `config.json` records the source Onshape assembly. Regenerating
 the model with onshape-to-robot overwrites the repaired XML; follow the
 closed-mate naming instructions in the simulation README before re-exporting.
+
+## Tiangong robot target
+
+The imported TG2 models are available under `simulation/robots/tiangong/`.
+To preview the existing MuJoCo target model from the repository root:
+
+```bash
+conda activate myglove
+python -m mujoco.viewer --mjcf=simulation/robots/tiangong/tg2_inspirehand.xml
+```
+
+This adds the robot assets for future sim2sim work. Glove-to-hand joint mapping,
+calibration, and a combined simulation control loop are not implemented by this
+asset import. See the model README for provenance and validation details.
