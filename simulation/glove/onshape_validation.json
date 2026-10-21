@@ -1,0 +1,14 @@
+{
+  "main": {
+    "features": 71,
+    "states": {
+      "OK": 71
+    }
+  },
+  "thumb": {
+    "features": 7,
+    "states": {
+      "OK": 7
+    }
+  }
+}

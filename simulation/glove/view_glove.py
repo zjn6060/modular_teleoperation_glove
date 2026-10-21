@@ -12,6 +12,7 @@ FINGER_CONTROLS = {
     'middle': ('middle_mcp_abduction', 'j10', 'j12', 'j13', 'j14', 'j15'),
     'little': ('little_mcp_abduction', 'j18', 'j20', 'j21', 'j22', 'j24'),
     'ring': ('ring_mcp_abduction', 'j26', 'j28', 'j29', 'j30', 'j31'),
+    'thumb': ('thumb_mcp_abduction', 'thumb_A', 'thumb_C', 'thumb_D', 'thumb_E', 'thumb_F', 'thumb_H'),
 }
 
 
@@ -22,6 +23,7 @@ def control_groups(names):
     if set(indices) != expected or len(indices) != len(names):
         raise ValueError('Actuator names do not match FINGER_CONTROLS.')
     lateral = {indices[controls[0]] for controls in FINGER_CONTROLS.values()}
+    lateral.add(indices['thumb_H'])
     groups = {indices[name]: finger for finger, controls in FINGER_CONTROLS.items()
               for name in controls}
     defaults = {finger: indices[controls[1]]
@@ -47,9 +49,10 @@ def main():
         elif key == 259:
             events['reset'] = True
 
-    print('Loaded: 24 controls; 8 closed revolute connections.')
+    print(f'Loaded: {model.nu} controls; {model.neq // 2} closed revolute connections; all five fingers.')
     print('Starts running. Space: pause/run. Backspace: reset. Shift+Tab: right sidebar.')
     print('Use Control sliders. Within each finger, the most recently edited linkage slider drives; other linkage targets follow.')
+    print('thumb_mcp_abduction controls the palm hinge; thumb_H independently controls the fingertip saddle.')
     print('Approximate inertias; gravity and contacts disabled for mechanism preview.')
 
     with mujoco.viewer.launch_passive(model, data, key_callback=key_callback,

@@ -1,158 +1,23 @@
 {
-  "mujoco_version": "3.15.0",
-  "bodies_excluding_world": 25,
-  "hinge_joints": 24,
-  "actuators": 24,
-  "connect_equalities": 16,
-  "baseline_seconds": 10,
-  "baseline_max_angle_rad": 5.65e-15,
-  "per_actuator_test_seconds": 1.5,
-  "actuator_tests": [
-    {
-      "actuator": "j1",
-      "target_rad": 0.3,
-      "achieved_rad": 0.2999999999999996,
-      "peak_connect_residual_m": 1.3630576853398968e-06
-    },
-    {
-      "actuator": "j2",
-      "target_rad": 0.3,
-      "achieved_rad": 0.007480085257779682,
-      "peak_connect_residual_m": 3.4518769851416e-05
-    },
-    {
-      "actuator": "j3",
-      "target_rad": 0.3,
-      "achieved_rad": 0.024162889125618234,
-      "peak_connect_residual_m": 6.843123509435445e-05
-    },
-    {
-      "actuator": "j5",
-      "target_rad": 0.3,
-      "achieved_rad": 0.058825328674406804,
-      "peak_connect_residual_m": 0.00011092746372549922
-    },
-    {
-      "actuator": "j6",
-      "target_rad": 0.3,
-      "achieved_rad": 0.07000119950277885,
-      "peak_connect_residual_m": 0.0001177928293456948
-    },
-    {
-      "actuator": "j7",
-      "target_rad": 0.3,
-      "achieved_rad": 0.01858619828457704,
-      "peak_connect_residual_m": 0.0001858766287384378
-    },
-    {
-      "actuator": "j9",
-      "target_rad": 0.3,
-      "achieved_rad": 0.29999999999999954,
-      "peak_connect_residual_m": 1.916037203106291e-06
-    },
-    {
-      "actuator": "j10",
-      "target_rad": 0.3,
-      "achieved_rad": 0.010383064048355919,
-      "peak_connect_residual_m": 4.473909500157802e-05
-    },
-    {
-      "actuator": "j12",
-      "target_rad": 0.3,
-      "achieved_rad": 0.022796647461328114,
-      "peak_connect_residual_m": 6.146491763492357e-05
-    },
-    {
-      "actuator": "j13",
-      "target_rad": 0.3,
-      "achieved_rad": 0.039589740417733554,
-      "peak_connect_residual_m": 8.860113837971806e-05
-    },
-    {
-      "actuator": "j14",
-      "target_rad": 0.3,
-      "achieved_rad": 0.06644941706423103,
-      "peak_connect_residual_m": 5.930948511428946e-05
-    },
-    {
-      "actuator": "j15",
-      "target_rad": 0.3,
-      "achieved_rad": 0.020280343097377203,
-      "peak_connect_residual_m": 0.0001564867860740088
-    },
-    {
-      "actuator": "j17",
-      "target_rad": 0.3,
-      "achieved_rad": 0.29999999999999943,
-      "peak_connect_residual_m": 1.5154234528011457e-06
-    },
-    {
-      "actuator": "j18",
-      "target_rad": 0.3,
-      "achieved_rad": 0.013082366251441553,
-      "peak_connect_residual_m": 3.8107973437388754e-05
-    },
-    {
-      "actuator": "j20",
-      "target_rad": 0.3,
-      "achieved_rad": 0.024831046681352015,
-      "peak_connect_residual_m": 4.0934273102422036e-05
-    },
-    {
-      "actuator": "j21",
-      "target_rad": 0.3,
-      "achieved_rad": 0.039620186281754774,
-      "peak_connect_residual_m": 5.8076612203875055e-05
-    },
-    {
-      "actuator": "j22",
-      "target_rad": 0.3,
-      "achieved_rad": 0.06747138805647127,
-      "peak_connect_residual_m": 8.013337213488153e-05
-    },
-    {
-      "actuator": "j24",
-      "target_rad": 0.3,
-      "achieved_rad": 0.012061340840846854,
-      "peak_connect_residual_m": 0.00016357600145365525
-    },
-    {
-      "actuator": "j25",
-      "target_rad": 0.3,
-      "achieved_rad": 0.2999999999999996,
-      "peak_connect_residual_m": 1.3321398688315167e-06
-    },
-    {
-      "actuator": "j26",
-      "target_rad": 0.3,
-      "achieved_rad": 0.00963821636431228,
-      "peak_connect_residual_m": 3.490445916198848e-05
-    },
-    {
-      "actuator": "j28",
-      "target_rad": 0.3,
-      "achieved_rad": 0.02017810856726685,
-      "peak_connect_residual_m": 5.8281834318149595e-05
-    },
-    {
-      "actuator": "j29",
-      "target_rad": 0.3,
-      "achieved_rad": 0.03875666552070423,
-      "peak_connect_residual_m": 8.121265446262016e-05
-    },
-    {
-      "actuator": "j30",
-      "target_rad": 0.3,
-      "achieved_rad": 0.0801488965408613,
-      "peak_connect_residual_m": 7.309657149959237e-05
-    },
-    {
-      "actuator": "j31",
-      "target_rad": 0.3,
-      "achieved_rad": 0.01597892153575451,
-      "peak_connect_residual_m": 0.00012814242281670996
-    }
-  ],
-  "max_peak_connect_residual_m": 0.0001858766287384378,
-  "numerical_warnings": 0
+  "bodies": 32,
+  "controls": 31,
+  "closed_revolute_connections": 10,
+  "simulation_seconds": 5.000000000000004,
+  "max_loop_error_m": 5.533625591941371e-05,
+  "driver_angles_rad": {
+    "index": 0.14999971217271735,
+    "middle": 0.14999999999999575,
+    "little": 0.1500000000000045,
+    "ring": 0.1499990008560755,
+    "thumb": 0.14999999999999925
+  },
+  "independent_angles_rad": {
+    "index_mcp_abduction": 0.05999999998080176,
+    "middle_mcp_abduction": 0.06000000000000003,
+    "little_mcp_abduction": 0.05999999999999999,
+    "ring_mcp_abduction": 0.05999999992191819,
+    "thumb_mcp_abduction": 0.05999999999999998,
+    "thumb_H": 0.05999999999999998
+  },
+  "warnings": []
 }

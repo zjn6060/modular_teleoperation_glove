@@ -1,0 +1,1239 @@
+{
+  "source_url": "https://cad.onshape.com/documents/1142f5b2eafb3feca857af3d/w/685064653818829e82081d78/e/a8dfb81982a03f147e461583",
+  "source_microversion": "f6f01404817e4c92c94638f5",
+  "meshes": 67,
+  "parts": 125,
+  "moving_joints": 31,
+  "closed_revolute_connections": 10,
+  "parts_mapping": [
+    {
+      "name": "M3_hex_nut_upper <1>",
+      "path": [
+        "M8AOy1XrXglwRRi7R",
+        "MoDWutBTlnVg2L7qr"
+      ],
+      "part_id": "KFrB",
+      "body": "palm_base",
+      "mesh": "part_60"
+    },
+    {
+      "name": "M3_flat_washer_upper <1>",
+      "path": [
+        "M8AOy1XrXglwRRi7R",
+        "Mlm3sXxY8GNOsJEj5"
+      ],
+      "part_id": "KFvB",
+      "body": "palm_base",
+      "mesh": "part_08"
+    },
+    {
+      "name": "M3x10_socket_bolt_upper <1>",
+      "path": [
+        "M8AOy1XrXglwRRi7R",
+        "M5NbCE/Ivzqr2LpZq"
+      ],
+      "part_id": "KFzB",
+      "body": "palm_base",
+      "mesh": "part_63"
+    },
+    {
+      "name": "M3_hex_nut_lower <1>",
+      "path": [
+        "M8AOy1XrXglwRRi7R",
+        "MCyXgv60PbEe3gbfu"
+      ],
+      "part_id": "KF3B",
+      "body": "palm_base",
+      "mesh": "part_50"
+    },
+    {
+      "name": "M3_flat_washer_lower <1>",
+      "path": [
+        "M8AOy1XrXglwRRi7R",
+        "MLHEfufhxKq9ZasNP"
+      ],
+      "part_id": "KF7B",
+      "body": "palm_base",
+      "mesh": "part_45"
+    },
+    {
+      "name": "M3x10_socket_bolt_lower <1>",
+      "path": [
+        "M8AOy1XrXglwRRi7R",
+        "MKXXXCLE23lXKtwrz"
+      ],
+      "part_id": "KF/B",
+      "body": "palm_base",
+      "mesh": "part_58"
+    },
+    {
+      "name": "12_palm_hinge_pin <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "Mi8MJxPB+J39lz/Tb"
+      ],
+      "part_id": "KF7C",
+      "body": "palm_base",
+      "mesh": "part_26"
+    },
+    {
+      "name": "11_palm_hinge_clevis_interface <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "M/keNv2TFbtgfWZ1h"
+      ],
+      "part_id": "KF/C",
+      "body": "palm_base",
+      "mesh": "part_27"
+    },
+    {
+      "name": "æ‰‹æŽŒ <1>",
+      "path": [
+        "MUX04btfl58N/Ncjc"
+      ],
+      "part_id": "JFL",
+      "body": "palm_base",
+      "mesh": "part_39"
+    },
+    {
+      "name": "spacer_G <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "M8ZzavCi6nIHeKLtq"
+      ],
+      "part_id": "KFDC",
+      "body": "link_thumb_D",
+      "mesh": "part_18"
+    },
+    {
+      "name": "pin_G <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MpNfyr5z66sL1FK2l"
+      ],
+      "part_id": "KFTC",
+      "body": "link_thumb_D",
+      "mesh": "part_05"
+    },
+    {
+      "name": "04_rocker_CDG <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MSN3Pc4TJ5ryNWccM"
+      ],
+      "part_id": "KFXD",
+      "body": "link_thumb_D",
+      "mesh": "part_13"
+    },
+    {
+      "name": "spacer_E <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "Mk6ZfCM0Kz/WBeUFp"
+      ],
+      "part_id": "KFHC",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_36"
+    },
+    {
+      "name": "spacer_D <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "M9VjJ7hjWMvmqRPWo"
+      ],
+      "part_id": "KFLC",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_56"
+    },
+    {
+      "name": "pin_E <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "Mz9f2RR20ggG0XtVf"
+      ],
+      "part_id": "KFbC",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_33"
+    },
+    {
+      "name": "pin_D <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MxQk75RRDcNwjS34x"
+      ],
+      "part_id": "KFfC",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_41"
+    },
+    {
+      "name": "motor_standoff_4 <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MQU8d59f5qpEWxiNe"
+      ],
+      "part_id": "KFrC",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_25"
+    },
+    {
+      "name": "motor_standoff_3 <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "M50e1qfFX9qCb0eTI"
+      ],
+      "part_id": "KFvC",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_24"
+    },
+    {
+      "name": "motor_standoff_2 <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "Mvv5Nvu7e1EGma51x"
+      ],
+      "part_id": "KFzC",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_31"
+    },
+    {
+      "name": "motor_standoff_1 <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MfzmfNm0sMbars2G9"
+      ],
+      "part_id": "KF3C",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_15"
+    },
+    {
+      "name": "09_DC15_A01_reference_envelope <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MxgaJkyZQGAl1/eA4"
+      ],
+      "part_id": "KFHD",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_06"
+    },
+    {
+      "name": "01_servo_carrier_ADE_and_hinge_rotor <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MFO4W8AU1IxPRmj8U"
+      ],
+      "part_id": "KFjD",
+      "body": "link_thumb_mcp_abduction",
+      "mesh": "part_49"
+    },
+    {
+      "name": "pin_H_direct_R4 <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MloI6XoEVftqYIfq4"
+      ],
+      "part_id": "KFPC",
+      "body": "link_thumb_F",
+      "mesh": "part_55"
+    },
+    {
+      "name": "06_output_FGH <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MfLYs9CGqpIcYHWlu"
+      ],
+      "part_id": "KFPD",
+      "body": "link_thumb_F",
+      "mesh": "part_19"
+    },
+    {
+      "name": "pin_F <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MZth7IY2X0jvZFGLT"
+      ],
+      "part_id": "KFXC",
+      "body": "link_thumb_E",
+      "mesh": "part_23"
+    },
+    {
+      "name": "05_coupler_EF <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MiJfgiYXC2mEZdtrF"
+      ],
+      "part_id": "KFTD",
+      "body": "link_thumb_E",
+      "mesh": "part_14"
+    },
+    {
+      "name": "pin_C <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MM/vS2AKIoQFRkppP"
+      ],
+      "part_id": "KFjC",
+      "body": "link_thumb_C",
+      "mesh": "part_22"
+    },
+    {
+      "name": "03_coupler_BC <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "Mv2m7XK4xwgL90wk8"
+      ],
+      "part_id": "KFbD",
+      "body": "link_thumb_C",
+      "mesh": "part_10"
+    },
+    {
+      "name": "pin_B <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "M0+vgH6bKJ0I2C+cL"
+      ],
+      "part_id": "KFnC",
+      "body": "link_thumb_A",
+      "mesh": "part_42"
+    },
+    {
+      "name": "10_servo_horn_reference <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MwDGzG83gu2A5gMay"
+      ],
+      "part_id": "KFDD",
+      "body": "link_thumb_A",
+      "mesh": "part_17"
+    },
+    {
+      "name": "02_input_AB_servo_disc <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "MKahjjP93S5hwWXAP"
+      ],
+      "part_id": "KFfD",
+      "body": "link_thumb_A",
+      "mesh": "part_53"
+    },
+    {
+      "name": "08_distal_saddle_R4 <1>",
+      "path": [
+        "M5Su1OKtIa4EoGN+J",
+        "M3bPt1Y1F0K04ITdR"
+      ],
+      "part_id": "KFLD",
+      "body": "link_thumb_H",
+      "mesh": "part_52"
+    },
+    {
+      "name": "Short_CDG <1>",
+      "path": [
+        "M4X0XAfF6xjeKbnus"
+      ],
+      "part_id": "JFD",
+      "body": "link_j3",
+      "mesh": "part_35"
+    },
+    {
+      "name": "DC15_A01_HORN_DUMMY <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MiHxBxDjrR9GZ3hCO"
+      ],
+      "part_id": "KFnD",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_43"
+    },
+    {
+      "name": "DC15_A01_CASE_F_DUMMY <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MeKo8bkIiT9L13w5/"
+      ],
+      "part_id": "KFrD",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_16"
+    },
+    {
+      "name": "DC15_A01_LED_CAP2_DUMMY <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "Mb7VjIuQeeaPiJU4u"
+      ],
+      "part_id": "KFvD",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_51"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "Mw08gGEBvofgopCZi"
+      ],
+      "part_id": "KFzD",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "B3B-EH <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MveYSGxa5A1ypNy/Z"
+      ],
+      "part_id": "KF3D",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <2>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "Mr4EbpGdboFSfviT2"
+      ],
+      "part_id": "KFzD",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <3>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "Ma2deQgSLCEWhhUz3"
+      ],
+      "part_id": "KF7D",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "DC15_A01_CASE_M_DUMMY <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MXW8SsDsWI3EB47aU"
+      ],
+      "part_id": "KF/D",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_28"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <4>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MjXYYH0i4SXXclfuC"
+      ],
+      "part_id": "KFzD",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <5>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MFSS2+gkz2L/nWYuZ"
+      ],
+      "part_id": "KF7D",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <6>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MpSjuODmlBknXLRpw"
+      ],
+      "part_id": "KFzD",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "B3B-EH <2>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "M9Z9uNaIYF1FD0z5W"
+      ],
+      "part_id": "KF3D",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "DC15_A01_CASE_B_DUMMY <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MosqU+JxIuledYkB/"
+      ],
+      "part_id": "KFDE",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_57"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <7>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MKOo/junR6QQRPQ0S"
+      ],
+      "part_id": "KF7D",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "BTS2_M2_6X8 <1>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MZptc1LQlR/IoTn0s"
+      ],
+      "part_id": "KFHE",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_38"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <8>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MPsNARvcdPVhEUzez"
+      ],
+      "part_id": "KF7D",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "BTS2_M2_6X8 <2>",
+      "path": [
+        "MRct/0uwqFZdJElvL",
+        "MgvJoDu1RT9heZepy"
+      ],
+      "part_id": "KFLE",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_59"
+    },
+    {
+      "name": "Part 6 <1>",
+      "path": [
+        "Mn8YcLR/PxL17FFC6"
+      ],
+      "part_id": "KFXB",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_34"
+    },
+    {
+      "name": "Part 6 <2>",
+      "path": [
+        "M+EXJjjBuizx7MbHO"
+      ],
+      "part_id": "KFnB",
+      "body": "link_index_mcp_abduction",
+      "mesh": "part_62"
+    },
+    {
+      "name": "DC15_A01_CASE_F_DUMMY <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MHEfSahXj1Vcj+c72"
+      ],
+      "part_id": "KFrD",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_16"
+    },
+    {
+      "name": "DC15_A01_LED_CAP2_DUMMY <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "M+m8aGVw7/7PJj6VU"
+      ],
+      "part_id": "KFvD",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_51"
+    },
+    {
+      "name": "BTS2_M2_6X8 <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MG4RJcM+jSVkDAZlr"
+      ],
+      "part_id": "KFLE",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_59"
+    },
+    {
+      "name": "BTS2_M2_6X8 <2>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MVfUqvl4hn4NwNuZv"
+      ],
+      "part_id": "KFHE",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_38"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MkiRWqKlowzL2h2Wg"
+      ],
+      "part_id": "KF7D",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <2>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MvBVJs6LXdxSN/Ln2"
+      ],
+      "part_id": "KFzD",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "B3B-EH <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "Ml2dCpjgahfQF60bJ"
+      ],
+      "part_id": "KF3D",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "DC15_A01_CASE_B_DUMMY <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "M7Quwo9P2N4DOoDDJ"
+      ],
+      "part_id": "KFDE",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_57"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <3>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "M6RKuFRmeH27tX2wQ"
+      ],
+      "part_id": "KF7D",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <4>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MxrfiI60H/r6t/ZgC"
+      ],
+      "part_id": "KF7D",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <5>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "Mb00siljYtNOgzCCH"
+      ],
+      "part_id": "KFzD",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <6>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MVMh76bZTI4Edahjv"
+      ],
+      "part_id": "KFzD",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <7>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MNv4frC2vefbKlWkM"
+      ],
+      "part_id": "KFzD",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <8>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MzZaCsLOzLD6Hm5/U"
+      ],
+      "part_id": "KF7D",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "DC15_A01_HORN_DUMMY <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MUgez4GdK/tmsznhO"
+      ],
+      "part_id": "KFnD",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_43"
+    },
+    {
+      "name": "B3B-EH <2>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "Mw6LN9YPbZpAKFlZn"
+      ],
+      "part_id": "KF3D",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "DC15_A01_CASE_M_DUMMY <1>",
+      "path": [
+        "MRlcaL7Lr28fNtqLN",
+        "MCOEICrckkRCWYlKG"
+      ],
+      "part_id": "KF/D",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_28"
+    },
+    {
+      "name": "舵机底座右侧 <1>",
+      "path": [
+        "MivawcyelZviLHz5n"
+      ],
+      "part_id": "JFP",
+      "body": "link_middle_mcp_abduction",
+      "mesh": "part_12"
+    },
+    {
+      "name": "Lang_EF_36.549 <1>",
+      "path": [
+        "MYu1PzmqHlowhZftZ"
+      ],
+      "part_id": "JFH",
+      "body": "link_j14",
+      "mesh": "part_30"
+    },
+    {
+      "name": "DC15_A01_HORN_DUMMY <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MUWGkrevp0PFG7BD2"
+      ],
+      "part_id": "KFnD",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_43"
+    },
+    {
+      "name": "DC15_A01_CASE_F_DUMMY <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MrT+Pk+h2wz1eiHJ0"
+      ],
+      "part_id": "KFrD",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_16"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MiE3JElbXNtpQs621"
+      ],
+      "part_id": "KF7D",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "BTS2_M2_6X8 <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MziAb9tqvsHh8LzKy"
+      ],
+      "part_id": "KFLE",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_59"
+    },
+    {
+      "name": "B3B-EH <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MhoI009ozpSTspl9K"
+      ],
+      "part_id": "KF3D",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <2>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "Mfs7e3Zeg1wqeD/Jl"
+      ],
+      "part_id": "KFzD",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "BTS2_M2_6X8 <2>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MWV5lVfY5fNymolMi"
+      ],
+      "part_id": "KFHE",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_38"
+    },
+    {
+      "name": "B3B-EH <2>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MkoJOgdHqN7r2whxx"
+      ],
+      "part_id": "KF3D",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <3>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MkP3WHjGigmIWb/vl"
+      ],
+      "part_id": "KF7D",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "DC15_A01_CASE_M_DUMMY <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MYtQPQDITkmqsNaDQ"
+      ],
+      "part_id": "KF/D",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_28"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <4>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MgIAt9txJ8FvsY7kc"
+      ],
+      "part_id": "KFzD",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <5>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MmYmVGbms87ijwQXX"
+      ],
+      "part_id": "KFzD",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <6>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MVwfC0PQXmuAgvKB7"
+      ],
+      "part_id": "KF7D",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <7>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "M+oZ0PGEKqUtMXLiV"
+      ],
+      "part_id": "KF7D",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <8>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MKVvgL94fGtKjwtWr"
+      ],
+      "part_id": "KFzD",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "DC15_A01_LED_CAP2_DUMMY <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MgHqq2gqTVfNrsXWY"
+      ],
+      "part_id": "KFvD",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_51"
+    },
+    {
+      "name": "DC15_A01_CASE_B_DUMMY <1>",
+      "path": [
+        "MIMbff/NIXeKhU2+y",
+        "MBRXUmr4bswqIc54o"
+      ],
+      "part_id": "KFDE",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_57"
+    },
+    {
+      "name": "Part 1 <4>",
+      "path": [
+        "MPZYasC9QfY5nEKoZ"
+      ],
+      "part_id": "JFn",
+      "body": "link_ring_mcp_abduction",
+      "mesh": "part_48"
+    },
+    {
+      "name": "Short_AB_\\T\\19.248mm <1>",
+      "path": [
+        "Mu1XDJp/alfGK9QIa"
+      ],
+      "part_id": "JFT",
+      "body": "link_j2",
+      "mesh": "part_09"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MpM6WyDuTJklydJDg"
+      ],
+      "part_id": "KFzD",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "DC15_A01_CASE_M_DUMMY <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MFI5n9ktuhvHAnUvV"
+      ],
+      "part_id": "KF/D",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_28"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <2>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "Mcb0Lr8ZrjojNM6hZ"
+      ],
+      "part_id": "KFzD",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <3>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MQBiUsWZwhv3Q9zWs"
+      ],
+      "part_id": "KFzD",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <4>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "M1+fFJCBsdJMCQDOJ"
+      ],
+      "part_id": "KFzD",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_46"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <5>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MpW4UgL/e+fyHhyeF"
+      ],
+      "part_id": "KF7D",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "DC15_A01_CASE_F_DUMMY <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MO/zff0sFUnv47BoE"
+      ],
+      "part_id": "KFrD",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_16"
+    },
+    {
+      "name": "DC15_A01_LED_CAP2_DUMMY <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MnMp1mvoh1sMfXHH4"
+      ],
+      "part_id": "KFvD",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_51"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <6>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MYQ9vOygRRfx5nD0a"
+      ],
+      "part_id": "KF7D",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "DC15_A01_CASE_B_DUMMY <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MNgmeQXqh10S4I+VT"
+      ],
+      "part_id": "KFDE",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_57"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <7>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MvpGZmsXHgz+CcYKi"
+      ],
+      "part_id": "KF7D",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "B3B-EH <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MEl41y5C1dhPIM+Ln"
+      ],
+      "part_id": "KF3D",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "DC15_A01_HORN_DUMMY <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MQVxRROFBqIT0ZkpF"
+      ],
+      "part_id": "KFnD",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_43"
+    },
+    {
+      "name": "B3B-EH <2>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MQ4x3Lutq0a85od6w"
+      ],
+      "part_id": "KF3D",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_07"
+    },
+    {
+      "name": "BTS2_M2_6X8 <1>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "Mq2B4V9m8rVOJzy1f"
+      ],
+      "part_id": "KFLE",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_59"
+    },
+    {
+      "name": "PHS_1_7X20_5_DC10 <8>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MRjdsKrk45BusgnE5"
+      ],
+      "part_id": "KF7D",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_32"
+    },
+    {
+      "name": "BTS2_M2_6X8 <2>",
+      "path": [
+        "M1CwAz7MxJtf17rgm",
+        "MKd3yluIltZQ1yj62"
+      ],
+      "part_id": "KFHE",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_38"
+    },
+    {
+      "name": "Part 1 <12>",
+      "path": [
+        "Miim0g0r2cBTuL1Zc"
+      ],
+      "part_id": "KFjB",
+      "body": "link_little_mcp_abduction",
+      "mesh": "part_54"
+    },
+    {
+      "name": "Part 1 <1>",
+      "path": [
+        "MbzPUZ4VeyN0zDzoJ"
+      ],
+      "part_id": "JFX",
+      "body": "link_j18",
+      "mesh": "part_21"
+    },
+    {
+      "name": "Lang_CDG <1>",
+      "path": [
+        "MX4Kz2fA2nycfYddi"
+      ],
+      "part_id": "JFb",
+      "body": "link_j12",
+      "mesh": "part_40"
+    },
+    {
+      "name": "Part 1 <2>",
+      "path": [
+        "MzViakpgRpi9n65Bl"
+      ],
+      "part_id": "JFf",
+      "body": "link_j21",
+      "mesh": "part_20"
+    },
+    {
+      "name": "Part 1 <3>",
+      "path": [
+        "M5snChUchZZVk+Q30"
+      ],
+      "part_id": "JFj",
+      "body": "link_j22",
+      "mesh": "part_61"
+    },
+    {
+      "name": "Lang_FGH <1>",
+      "path": [
+        "MEq8fKS27+zE/iKW+"
+      ],
+      "part_id": "JFr",
+      "body": "link_j15",
+      "mesh": "part_00"
+    },
+    {
+      "name": "Part 1 <5>",
+      "path": [
+        "MPaOEzSmj9241Ol6H"
+      ],
+      "part_id": "JFv",
+      "body": "link_j31",
+      "mesh": "part_11"
+    },
+    {
+      "name": "Lang_BC_54.193 <1>",
+      "path": [
+        "MC4ZDzB9OBNCrroXs"
+      ],
+      "part_id": "JFz",
+      "body": "link_j13",
+      "mesh": "part_01"
+    },
+    {
+      "name": "Lang_AB_34.531mm <1>",
+      "path": [
+        "MB6F5aDQk1BXP3FfZ"
+      ],
+      "part_id": "JF3",
+      "body": "link_j10",
+      "mesh": "part_02"
+    },
+    {
+      "name": "Part 1 <6>",
+      "path": [
+        "MchcfX/U4vbAG5wfu"
+      ],
+      "part_id": "JF7",
+      "body": "link_j30",
+      "mesh": "part_37"
+    },
+    {
+      "name": "Part 1 <7>",
+      "path": [
+        "MjcCrmiUYehNIs+Kv"
+      ],
+      "part_id": "JF/",
+      "body": "link_j26",
+      "mesh": "part_03"
+    },
+    {
+      "name": "Part 1 <8>",
+      "path": [
+        "MlMqGM2kLOliBn/Jx"
+      ],
+      "part_id": "KFDB",
+      "body": "link_j28",
+      "mesh": "part_04"
+    },
+    {
+      "name": "Short_BC_17.285 <1>",
+      "path": [
+        "MHqVI+pH/OIC8oi7H"
+      ],
+      "part_id": "KFHB",
+      "body": "link_j5",
+      "mesh": "part_29"
+    },
+    {
+      "name": "Short_FGH <1>",
+      "path": [
+        "MX7s2IpPIPZHESRb2"
+      ],
+      "part_id": "KFLB",
+      "body": "link_j7",
+      "mesh": "part_64"
+    },
+    {
+      "name": "Short_EF_28.045 <1>",
+      "path": [
+        "MRR1iL2Oyfi6/rN7V"
+      ],
+      "part_id": "KFPB",
+      "body": "link_j6",
+      "mesh": "part_47"
+    },
+    {
+      "name": "Part 1 <9>",
+      "path": [
+        "MB2III3L7xaVbqtHE"
+      ],
+      "part_id": "KFTB",
+      "body": "link_j20",
+      "mesh": "part_66"
+    },
+    {
+      "name": "Part 1 <10>",
+      "path": [
+        "M51Ax4Fj/OG6j8sLo"
+      ],
+      "part_id": "KFbB",
+      "body": "link_j29",
+      "mesh": "part_65"
+    },
+    {
+      "name": "Part 1 <11>",
+      "path": [
+        "MXXzUAAChm/kJdz51"
+      ],
+      "part_id": "KFfB",
+      "body": "link_j24",
+      "mesh": "part_44"
+    }
+  ],
+  "limitations": [
+    "Approximate masses and bounding-box inertias; not calibrated physical parameters.",
+    "Gravity and collisions disabled for mechanism preview.",
+    "Control ranges are preview ranges, not measured mechanical travel limits."
+  ]
+}

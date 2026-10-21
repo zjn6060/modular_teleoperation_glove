@@ -95,15 +95,23 @@ use the right **Control** panel to adjust joint targets in radians.
 The most recently edited linkage control in each finger drives that mechanism;
 other linkage targets follow their current angles to allow closed-loop motion.
 
-The repaired assembly contains 24 hinge joints, 24 position actuators, and
-16 equality constraints for eight closed revolute connections. Gravity and
+The five-finger assembly includes the thumb mounted 60 mm rearward, with 31
+hinge joints, 31 position controls, and 20 equality constraints for ten closed
+revolute connections. The thumb controls are `thumb_mcp_abduction`,
+`thumb_A`, `thumb_C`, `thumb_D`, `thumb_E`, `thumb_F`, and `thumb_H`;
+the fingertip saddle (`thumb_H`) can be controlled independently. Gravity and
 contacts are disabled, and masses and inertias are approximate; this preview
 is intended for inspecting assembly and linkage motion. Repair details and
 validation results are included in `simulation/glove/`.
 
 The included `config.json` records the source Onshape assembly. Regenerating
-the model with onshape-to-robot overwrites the repaired XML; follow the
-closed-mate naming instructions in the simulation README before re-exporting.
+the model with onshape-to-robot overwrites the processed XML; export into a
+separate directory and verify the rigid groups and closed-loop constraints
+before replacing the current model. The current five-finger validation is in
+`validation.json` and `onshape_validation.json`; older four-finger reports are
+identified in the simulation README.
+
+![Five-finger MuJoCo glove preview](simulation/glove/preview.png)
 
 ## Tiangong robot target
 
