@@ -1,0 +1,47 @@
+{
+  "device": "/dev/ttyUSB0",
+  "baudrate": 1000000,
+  "reference_pose": "ef_horizontal",
+  "servos": [
+    {
+      "finger": "index",
+      "motor_id": 2,
+      "joint": "j2",
+      "zero_position": 1497,
+      "direction": -1,
+      "offset": -0.20764309993034558,
+      "min_position": 1316,
+      "max_position": 1802
+    },
+    {
+      "finger": "middle",
+      "motor_id": 3,
+      "joint": "j10",
+      "zero_position": 2656,
+      "direction": -1,
+      "offset": 0.20967165061746315,
+      "min_position": 2211,
+      "max_position": 2924
+    },
+    {
+      "finger": "ring",
+      "motor_id": 4,
+      "joint": "j26",
+      "zero_position": 1531,
+      "direction": -1,
+      "offset": -0.1476192242566341,
+      "min_position": 1307,
+      "max_position": 2106
+    },
+    {
+      "finger": "little",
+      "motor_id": 5,
+      "joint": "j18",
+      "zero_position": 2710,
+      "direction": -1,
+      "offset": -0.033190154891506264,
+      "min_position": 2282,
+      "max_position": 2894
+    }
+  ]
+}

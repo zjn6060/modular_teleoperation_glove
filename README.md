@@ -90,10 +90,10 @@ python3 simulation/glove/view_glove.py
 The viewer starts running with a closer, centered camera. Press **Space** to pause/resume;
 use the right **Control** panel to adjust joint targets in radians.
 **Backspace** resets the model, and **Shift+Tab** toggles the right sidebar.
-The most recently edited linkage control in each finger drives that mechanism;
-other linkage targets follow their current angles to allow closed-loop motion.
+Each finger has two controls: MCP abduction and the servo-horn joint
+(`j2`, `j10`, `j26`, `j18`); the remaining linkage joints are passive.
 
-The repaired assembly contains 24 hinge joints, 24 position actuators, and
+The repaired assembly contains 24 hinge joints, 8 position actuators, and
 16 equality constraints for eight closed revolute connections. Gravity and
 contacts are disabled, and masses and inertias are approximate; this preview
 is intended for inspecting assembly and linkage motion. Repair details and

@@ -378,29 +378,13 @@
   </asset>
   <actuator>
     <position name="index_mcp_abduction" joint="index_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j2" joint="j2" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j3" joint="j3" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j5" joint="j5" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j6" joint="j6" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j7" joint="j7" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j2" joint="j2" gear="-1" class="glove_mujoco" kp="5" dampratio="1" ctrllimited="true" ctrlrange="0.20764309993034558 1.57079632679" forcelimited="true" forcerange="-0.5 0.5" />
     <position name="middle_mcp_abduction" joint="middle_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j10" joint="j10" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j12" joint="j12" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j13" joint="j13" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j14" joint="j14" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j15" joint="j15" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="little_mcp_abduction" joint="little_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j18" joint="j18" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j20" joint="j20" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j21" joint="j21" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j22" joint="j22" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j24" joint="j24" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j10" joint="j10" class="glove_mujoco" kp="5" dampratio="1" ctrllimited="true" ctrlrange="0.20967165061746315 1.57079632679" forcelimited="true" forcerange="-0.5 0.5" />
     <position name="ring_mcp_abduction" joint="ring_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j26" joint="j26" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j28" joint="j28" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j29" joint="j29" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j30" joint="j30" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
-    <position name="j31" joint="j31" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j26" joint="j26" gear="-1" class="glove_mujoco" kp="5" dampratio="1" ctrllimited="true" ctrlrange="0.1476192242566341 1.57079632679" forcelimited="true" forcerange="-0.5 0.5" />
+    <position name="little_mcp_abduction" joint="little_mcp_abduction" class="glove_mujoco" kp="0.5" dampratio="1" ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679" forcelimited="true" forcerange="-0.05 0.05" />
+    <position name="j18" joint="j18" class="glove_mujoco" kp="5" dampratio="1" ctrllimited="true" ctrlrange="-0.033190154891506264 1.57079632679" forcelimited="true" forcerange="-0.5 0.5" />
   </actuator>
   <equality>
     <connect name="closing_j4_1" body1="short_bc_17_285" body2="short_ab__19_248mm" anchor="-0.017285 -6.93889390391e-18 6.93889390391e-18" solref="0.01 1" solimp="0.99 0.999 0.001 0.5 2" />

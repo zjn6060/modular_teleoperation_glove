@@ -6,6 +6,7 @@ from driver import (
     CommunicationError,
     ConfigurationError,
     MotorConfig,
+    OperatingMode,
     SafetyError,
     SimulatedBus,
     XL330Driver,
@@ -146,3 +147,42 @@ def test_context_manager_closes_bus_after_exception():
     assert not bus.is_open
     assert bus.registers[1][Register.TORQUE_ENABLE] == 0
 
+
+
+def test_current_mode_zeroes_goal_current_before_torque_and_accepts_signed_currents():
+    driver, bus = make_driver((1, 2))
+    driver.open()
+    driver.set_operating_mode(OperatingMode.CURRENT)
+    assert all(bus.registers[motor_id][Register.OPERATING_MODE] == 0 for motor_id in (1, 2))
+    bus.registers[1][Register.GOAL_CURRENT] = 50
+
+    assert driver.enable_torque() == {}
+    first_enable = next(
+        index
+        for index, (_, address, _, value) in enumerate(bus.writes)
+        if address == Register.TORQUE_ENABLE and value == 1
+    )
+    zeroed = {
+        motor_id
+        for motor_id, address, _, value in bus.writes[:first_enable]
+        if address == Register.GOAL_CURRENT and value == 0
+    }
+    assert zeroed == {1, 2}
+
+    driver.command_currents({1: -15, 2: 10})
+    assert bus.registers[1][Register.GOAL_CURRENT] == (1 << 16) - 15
+    assert bus.registers[2][Register.GOAL_CURRENT] == 10
+    with pytest.raises(SafetyError, match="mode 3 or 5"):
+        driver.command_positions({1: 2048})
+    driver.close()
+
+
+def test_mode_change_requires_torque_off_and_currents_require_mode_zero():
+    driver, bus = make_driver((1,))
+    driver.open()
+    driver.enable_torque()
+    with pytest.raises(SafetyError, match="Disable torque"):
+        driver.set_operating_mode(OperatingMode.CURRENT)
+    with pytest.raises(SafetyError, match="mode 0"):
+        driver.command_currents({1: 5})
+    driver.close()

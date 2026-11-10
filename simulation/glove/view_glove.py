@@ -1,44 +1,26 @@
 #!/usr/bin/env python3
-"""Interactive, contact-free closed-linkage preview with automatic follower targets."""
+"""Interactive, contact-free closed-linkage preview.
+
+Each finger has two controls: MCP abduction and the servo-horn joint. The other
+linkage joints are passive and follow through the closed-loop constraints.
+"""
 from pathlib import Path
 import time
-import numpy as np
 import mujoco
 import mujoco.viewer
 
-
-FINGER_CONTROLS = {
-    'index': ('index_mcp_abduction', 'j2', 'j3', 'j5', 'j6', 'j7'),
-    'middle': ('middle_mcp_abduction', 'j10', 'j12', 'j13', 'j14', 'j15'),
-    'little': ('little_mcp_abduction', 'j18', 'j20', 'j21', 'j22', 'j24'),
-    'ring': ('ring_mcp_abduction', 'j26', 'j28', 'j29', 'j30', 'j31'),
-}
+if __package__:
+    from .reference_pose import reset_reference_pose
+else:
+    from reference_pose import reset_reference_pose
 
 
-def control_groups(names):
-    """Resolve each finger's abduction control and linkage followers by name."""
-    indices = {name: i for i, name in enumerate(names)}
-    expected = {name for controls in FINGER_CONTROLS.values() for name in controls}
-    if set(indices) != expected or len(indices) != len(names):
-        raise ValueError('Actuator names do not match FINGER_CONTROLS.')
-    lateral = {indices[controls[0]] for controls in FINGER_CONTROLS.values()}
-    groups = {indices[name]: finger for finger, controls in FINGER_CONTROLS.items()
-              for name in controls}
-    defaults = {finger: indices[controls[1]]
-                for finger, controls in FINGER_CONTROLS.items()}
-    return lateral, groups, defaults
-
-
-def main():
+def run(make_hook=None):
+    """Run the preview; make_hook(model, data) may return an on_frame() callback."""
     model = mujoco.MjModel.from_xml_path(str(Path(__file__).resolve().parent / 'scene.xml'))
     data = mujoco.MjData(model)
-    mujoco.mj_forward(model, data)
-    names = [mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_ACTUATOR, i) for i in range(model.nu)]
-    qadr = model.jnt_qposadr[model.actuator_trnid[:, 0]]
-    lateral, groups, defaults = control_groups(names)
-    drivers = dict(defaults)
-    targets = np.zeros(model.nu)
-    displayed = data.ctrl.copy()
+    reset_reference_pose(model, data)
+    on_frame = make_hook(model, data) if make_hook else None
     events = {'paused': False, 'reset': False}
 
     def key_callback(key):
@@ -47,9 +29,8 @@ def main():
         elif key == 259:
             events['reset'] = True
 
-    print('Loaded: 24 controls; 8 closed revolute connections.')
-    print('Starts running. Space: pause/run. Backspace: reset. Shift+Tab: right sidebar.')
-    print('Use Control sliders. Within each finger, the most recently edited linkage slider drives; other linkage targets follow.')
+    print(f'Loaded: {model.nu} controls (abduction + servo horn per finger); 8 closed revolute connections.')
+    print('Starts with EF rods horizontal. Space: pause/run. Backspace: horizontal reset. Shift+Tab: right sidebar.')
     print('Approximate inertias; gravity and contacts disabled for mechanism preview.')
 
     with mujoco.viewer.launch_passive(model, data, key_callback=key_callback,
@@ -64,28 +45,15 @@ def main():
             viewer.sync()
             with viewer.lock():
                 if events['reset']:
-                    mujoco.mj_resetData(model, data)
-                    mujoco.mj_forward(model, data)
-                    targets[:] = 0
-                    displayed[:] = 0
-                    drivers = dict(defaults)
+                    reset_reference_pose(model, data)
                     events['reset'] = False
-                changed = np.flatnonzero(np.abs(data.ctrl - displayed) > 1e-5)
-                for i in changed:
-                    targets[i] = data.ctrl[i]
-                    if i not in lateral:
-                        drivers[groups[i]] = int(i)
+                if on_frame:
+                    on_frame()
                 if not events['paused']:
                     for _ in range(max(1, round((1 / 60) / model.opt.timestep))):
-                        data.ctrl[:] = data.qpos[qadr]
-                        for i in lateral:
-                            data.ctrl[i] = targets[i]
-                        for i in drivers.values():
-                            data.ctrl[i] = targets[i]
                         mujoco.mj_step(model, data)
-                displayed = data.ctrl.copy()
             time.sleep(max(0, 1 / 60 - (time.monotonic() - started)))
 
 
 if __name__ == '__main__':
-    main()
+    run()
