@@ -1,0 +1,97 @@
+{
+  "closure_mates": [
+    {
+      "mate": "dof_j4",
+      "rename_to": "closing_j4",
+      "body1": "short_bc_17_285",
+      "body2": "short_ab__19_248mm",
+      "duplicate_body": "short_ab__19_248mm_2"
+    },
+    {
+      "mate": "dof_j8",
+      "rename_to": "closing_j8",
+      "body1": "short_fgh",
+      "body2": "short_cdg",
+      "duplicate_body": "short_cdg_2"
+    },
+    {
+      "mate": "dof_j11",
+      "rename_to": "closing_j11",
+      "body1": "lang_bc_54_193",
+      "body2": "lang_ab_34_531mm",
+      "duplicate_body": "lang_ab_34_531mm_2"
+    },
+    {
+      "mate": "dof_j16",
+      "rename_to": "closing_j16",
+      "body1": "lang_fgh",
+      "body2": "lang_cdg",
+      "duplicate_body": "lang_cdg_2"
+    },
+    {
+      "mate": "dof_j19",
+      "rename_to": "closing_j19",
+      "body1": "part_1_4",
+      "body2": "part_1_2",
+      "duplicate_body": "part_1_5"
+    },
+    {
+      "mate": "dof_j23",
+      "rename_to": "closing_j23",
+      "body1": "part_1_7",
+      "body2": "part_1_3",
+      "duplicate_body": "part_1_8"
+    },
+    {
+      "mate": "dof_j27",
+      "rename_to": "closing_j27",
+      "body1": "part_1_14",
+      "body2": "part_1_12",
+      "duplicate_body": "part_1_15"
+    },
+    {
+      "mate": "dof_j32",
+      "rename_to": "closing_j32",
+      "body1": "part_1_17",
+      "body2": "part_1_13",
+      "duplicate_body": "part_1_18"
+    }
+  ],
+  "retained_joints": [
+    "j1",
+    "j2",
+    "j3",
+    "j5",
+    "j6",
+    "j7",
+    "j9",
+    "j10",
+    "j12",
+    "j13",
+    "j14",
+    "j15",
+    "j17",
+    "j18",
+    "j20",
+    "j21",
+    "j22",
+    "j24",
+    "j25",
+    "j26",
+    "j28",
+    "j29",
+    "j30",
+    "j31"
+  ],
+  "mesh_inertia_hull_fallback": [
+    "bts2_m2_6x8__2",
+    "phs_1_7x20_5_dc10__2"
+  ],
+  "mass_model": "approximate; plastic-like density 1250 kg/m3, screw density 7850 kg/m3",
+  "contacts_enabled": false,
+  "gravity": [
+    0,
+    0,
+    0
+  ]
+}

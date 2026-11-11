@@ -12,6 +12,7 @@ from .errors import CommunicationError, ConfigurationError, SafetyError
 
 
 class OperatingMode(IntEnum):
+    CURRENT = 0
     VELOCITY = 1
     POSITION = 3
     EXTENDED_POSITION = 4
@@ -28,6 +29,8 @@ class Register(IntEnum):
     TORQUE_ENABLE = 64
     LED = 65
     HARDWARE_ERROR = 70
+    POSITION_D_GAIN = 80
+    POSITION_I_GAIN = 82
     POSITION_P_GAIN = 84
     BUS_WATCHDOG = 98
     GOAL_PWM = 100
@@ -53,6 +56,8 @@ REGISTER_SIZE = {
     Register.TORQUE_ENABLE: 1,
     Register.LED: 1,
     Register.HARDWARE_ERROR: 1,
+    Register.POSITION_D_GAIN: 2,
+    Register.POSITION_I_GAIN: 2,
     Register.POSITION_P_GAIN: 2,
     Register.BUS_WATCHDOG: 1,
     Register.GOAL_PWM: 2,
@@ -73,6 +78,9 @@ TICKS_PER_REVOLUTION = 4096
 MIN_POSITION = 0
 MAX_POSITION = TICKS_PER_REVOLUTION - 1
 XL330_MODEL_NUMBERS = frozenset((1190, 1200))
+SUPPORTED_MODES = frozenset(
+    (OperatingMode.CURRENT, OperatingMode.POSITION, OperatingMode.CURRENT_BASED_POSITION)
+)
 
 # Approximate slopes derived from the 5 V stall ratings in the ROBOTIS
 # e-manual. XL330 current feedback measures input current, not phase current,
@@ -189,6 +197,7 @@ class XL330Driver:
         self.validate_model = validate_model
         self._by_id = {motor.motor_id: motor for motor in motor_tuple}
         self._torque_enabled: set[int] = set()
+        self._modes: dict[int, int] = {}
         self._model_numbers: dict[int, int] = {}
         self._is_open = False
 
@@ -248,6 +257,7 @@ class XL330Driver:
             except Exception as exc:  # Continue trying every motor during cleanup.
                 failures.append(str(exc))
         self._torque_enabled.clear()
+        self._modes.clear()
         try:
             self.bus.close()
         except Exception as exc:
@@ -398,21 +408,37 @@ class XL330Driver:
         return snapshots
 
     def enable_torque(self, motor_ids: Iterable[int] | None = None) -> dict[int, int]:
-        """Hold current positions, then enable torque on the requested motors."""
+        """Make torque-on harmless, then enable torque on the requested motors.
+
+        Position-mode motors (3, 5) first hold their current positions;
+        current-mode motors (0) first get a zero goal current. Returns the
+        position holds.
+        """
         self._require_open()
         ids = self._normalize_ids(motor_ids)
         modes = {motor_id: self._read(motor_id, Register.OPERATING_MODE) for motor_id in ids}
         invalid = {
             motor_id: mode
             for motor_id, mode in modes.items()
-            if mode not in (OperatingMode.POSITION, OperatingMode.CURRENT_BASED_POSITION)
+            if mode not in SUPPORTED_MODES
         }
         if invalid:
             details = ", ".join(f"ID {key}: mode {value}" for key, value in invalid.items())
-            raise SafetyError(f"Position commands require mode 3 or 5 ({details}).")
+            raise SafetyError(f"Torque requires mode 0, 3, or 5 ({details}).")
 
+        current_ids = [motor_id for motor_id in ids if modes[motor_id] == OperatingMode.CURRENT]
+        if current_ids:
+            self.bus.sync_write(
+                {motor_id: 0 for motor_id in current_ids},
+                int(Register.GOAL_CURRENT),
+                REGISTER_SIZE[Register.GOAL_CURRENT],
+            )
         all_positions = self.read_positions()
-        holds = {motor_id: all_positions[motor_id] for motor_id in ids}
+        holds = {
+            motor_id: all_positions[motor_id]
+            for motor_id in ids
+            if modes[motor_id] != OperatingMode.CURRENT
+        }
         outside_limits = {
             motor_id: position
             for motor_id, position in holds.items()
@@ -428,6 +454,7 @@ class XL330Driver:
         self.bus.sync_write(
             holds, int(Register.GOAL_POSITION), REGISTER_SIZE[Register.GOAL_POSITION]
         )
+        self._modes.update(modes)
         enabled_now: list[int] = []
         try:
             for motor_id in ids:
@@ -463,6 +490,8 @@ class XL330Driver:
             config = self._config(motor_id)
             if motor_id not in self._torque_enabled:
                 raise SafetyError(f"Motor {config.label}: torque is not enabled by this driver.")
+            if self._modes.get(motor_id) == OperatingMode.CURRENT:
+                raise SafetyError(f"Motor {config.label}: position commands require mode 3 or 5.")
             position = int(position)
             if not config.min_position <= position <= config.max_position:
                 raise SafetyError(
@@ -481,12 +510,52 @@ class XL330Driver:
         }
         self.command_positions(positions)
 
+    def command_currents(self, targets: Mapping[int, int]) -> None:
+        """Write signed goal currents (about 1 mA per unit) to current-mode motors."""
+        self._require_open()
+        encoded: dict[int, int] = {}
+        for motor_id, current in targets.items():
+            config = self._config(motor_id)
+            if motor_id not in self._torque_enabled:
+                raise SafetyError(f"Motor {config.label}: torque is not enabled by this driver.")
+            if self._modes.get(motor_id) != OperatingMode.CURRENT:
+                raise SafetyError(f"Motor {config.label}: current commands require mode 0.")
+            current = int(current)
+            if not -32768 <= current <= 32767:
+                raise ConfigurationError(f"Motor {config.label}: current {current} is out of range.")
+            encoded[motor_id] = current & 0xFFFF
+        self.bus.sync_write(
+            encoded, int(Register.GOAL_CURRENT), REGISTER_SIZE[Register.GOAL_CURRENT]
+        )
+
+    def set_operating_mode(self, mode: OperatingMode) -> None:
+        """Write the EEPROM operating mode on every motor; torque must be off.
+
+        Changing the mode can reset the control gains to that mode's defaults.
+        """
+        self._require_open()
+        if mode not in SUPPORTED_MODES:
+            raise ConfigurationError("This driver supports modes 0, 3, and 5.")
+        enabled = {
+            motor_id: value
+            for motor_id, value in self.bus.sync_read(
+                self.motor_ids, int(Register.TORQUE_ENABLE), REGISTER_SIZE[Register.TORQUE_ENABLE]
+            ).items()
+            if value
+        }
+        if enabled:
+            ids = ", ".join(str(motor_id) for motor_id in enabled)
+            raise SafetyError(f"Disable torque before changing the operating mode (ID {ids}).")
+        for motor_id in self.motor_ids:
+            self._write(motor_id, Register.OPERATING_MODE, int(mode))
+
     def configure_position_control(
         self,
         *,
         operating_mode: OperatingMode | None = None,
         current_limit: int | None = None,
         position_p_gain: int | None = None,
+        position_d_gain: int | None = None,
         profile_velocity: int | None = None,
         profile_acceleration: int | None = None,
         watchdog: int | None = None,
@@ -497,7 +566,10 @@ class XL330Driver:
         The method changes only values supplied by the caller.
         """
         self._require_open()
-        if self._torque_enabled:
+        torque_states = self.bus.sync_read(
+            self.motor_ids, int(Register.TORQUE_ENABLE), REGISTER_SIZE[Register.TORQUE_ENABLE]
+        )
+        if self._torque_enabled or any(torque_states.values()):
             raise SafetyError("Disable torque before changing control settings.")
         if operating_mode not in (None, OperatingMode.POSITION, OperatingMode.CURRENT_BASED_POSITION):
             raise ConfigurationError("This driver supports position modes 3 and 5.")
@@ -505,15 +577,22 @@ class XL330Driver:
             (Register.OPERATING_MODE, operating_mode),
             (Register.CURRENT_LIMIT, current_limit),
             (Register.POSITION_P_GAIN, position_p_gain),
+            (Register.POSITION_D_GAIN, position_d_gain),
             (Register.PROFILE_VELOCITY, profile_velocity),
             (Register.PROFILE_ACCELERATION, profile_acceleration),
             (Register.BUS_WATCHDOG, watchdog),
         )
+        # Validate the whole request before applying any of its settings.
         for register, value in settings:
             if value is None:
                 continue
             if int(value) < 0:
                 raise ConfigurationError(f"{register.name} must be nonnegative.")
+            if register in (Register.POSITION_P_GAIN, Register.POSITION_D_GAIN) and int(value) > 16383:
+                raise ConfigurationError(f"{register.name} must be in 0..16383 (raw register units).")
+        for register, value in settings:
+            if value is None:
+                continue
             for motor_id in self.motor_ids:
                 self._write(motor_id, register, int(value))
 

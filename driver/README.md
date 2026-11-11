@@ -112,6 +112,7 @@ with driver:
         operating_mode=OperatingMode.CURRENT_BASED_POSITION,
         current_limit=50,
         position_p_gain=100,
+        position_d_gain=0,
         profile_velocity=10,
         profile_acceleration=5,
         watchdog=25,
@@ -127,6 +128,12 @@ with driver:
 Angle commands are relative to each motor's configured zero. Targets outside
 the configured tick limits raise `SafetyError`; pass `clamp=True` to
 `command_angles` only when clipping is intended.
+
+`position_p_gain` and `position_d_gain` use raw XL330 register values in
+`0..16383` (addresses 84 and 80, two bytes each). Supplying one leaves the
+other and the current settings unchanged. Torque must be off on the hardware,
+including when another application enabled it. Position I Gain (address 82)
+can be read with `read_register`; it is not changed by this API.
 
 ## Tests
 

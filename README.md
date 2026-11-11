@@ -1,7 +1,7 @@
 # TeleGlove
 
-TeleGlove is a modular teleoperation glove project with hardware drivers and
-supporting software. The first driver targets ROBOTIS DYNAMIXEL XL330
+This repository contains the hardware drivers and supporting software for the
+modular teleoperation glove. The first driver targets ROBOTIS DYNAMIXEL XL330
 motors and is being adapted from the DOGlove reference implementation under
 `reference/DOGlove`.
 
@@ -72,8 +72,10 @@ same baud rate, and each motor on the bus must have a unique ID.
   [`driver/README.md`](driver/README.md).
 - `simulation/glove/` — assembled MuJoCo glove model, mesh assets, and sidebar
   control preview; see [`simulation/glove/README.md`](simulation/glove/README.md).
-- `simulation/robots/tiangong/` — Tiangong TG2 URDF models, mesh assets, and a
-  MuJoCo target model; see [`simulation/robots/tiangong/README.md`](simulation/robots/tiangong/README.md).
+- `simulation/glove_five_finger/` — preserved five-finger assembly preview with thumb; see
+  [`simulation/glove_five_finger/README.md`](simulation/glove_five_finger/README.md).
+- `simulation/robots/tiangong/` — Tiangong TG2 robot assets; see
+  [`simulation/robots/tiangong/README.md`](simulation/robots/tiangong/README.md).
 - `reference/DOGlove/` — upstream reference code used during development.
 
 The `myglove` environment includes the core motor-driver dependencies, MuJoCo,
@@ -92,26 +94,33 @@ python3 simulation/glove/view_glove.py
 The viewer starts running with a closer, centered camera. Press **Space** to pause/resume;
 use the right **Control** panel to adjust joint targets in radians.
 **Backspace** resets the model, and **Shift+Tab** toggles the right sidebar.
-The most recently edited linkage control in each finger drives that mechanism;
-other linkage targets follow their current angles to allow closed-loop motion.
+Each finger has two controls: MCP abduction and the servo-horn joint
+(`index_motor`, `middle_motor`, `ring_motor`, `little_motor`); the remaining linkage joints are passive.
 
-The five-finger assembly includes the thumb mounted 60 mm rearward, with 31
-hinge joints, 31 position controls, and 20 equality constraints for ten closed
-revolute connections. The thumb controls are `thumb_mcp_abduction`,
-`thumb_A`, `thumb_C`, `thumb_D`, `thumb_E`, `thumb_F`, and `thumb_H`;
-the fingertip saddle (`thumb_H`) can be controlled independently. Gravity and
+The repaired assembly contains 24 hinge joints, 8 position actuators, and
+16 equality constraints for eight closed revolute connections. Gravity and
 contacts are disabled, and masses and inertias are approximate; this preview
 is intended for inspecting assembly and linkage motion. Repair details and
 validation results are included in `simulation/glove/`.
 
 The included `config.json` records the source Onshape assembly. Regenerating
-the model with onshape-to-robot overwrites the processed XML; export into a
-separate directory and verify the rigid groups and closed-loop constraints
-before replacing the current model. The current five-finger validation is in
-`validation.json` and `onshape_validation.json`; older four-finger reports are
-identified in the simulation README.
+the model with onshape-to-robot overwrites the repaired XML; follow the
+closed-mate naming instructions in the simulation README before re-exporting.
 
-![Five-finger MuJoCo glove preview](simulation/glove/preview.png)
+## Contact feedback demo
+
+The calibrated four-finger model is in `simulation/glove/`. For the single-index
+virtual-wall demo, run `python simulation/glove/haptic_demo.py` without hardware,
+or add `--hardware` to read index ID 2 and temporarily apply current-mode feedback.
+Press Space to enable/release feedback. Defaults are a 70 mA cap and 500 mA/rad
+stiffness; see the [demo instructions](simulation/glove/README.md#食指力反馈-demo实验).
+
+The newer five-finger export is preserved separately and has not been calibrated
+for this hardware bridge. Preview it with:
+
+```bash
+python simulation/glove_five_finger/view_glove.py
+```
 
 ## Tiangong robot target
 

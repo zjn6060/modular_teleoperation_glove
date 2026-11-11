@@ -6,6 +6,7 @@ from driver import (
     CommunicationError,
     ConfigurationError,
     MotorConfig,
+    OperatingMode,
     SafetyError,
     SimulatedBus,
     XL330Driver,
@@ -146,3 +147,77 @@ def test_context_manager_closes_bus_after_exception():
     assert not bus.is_open
     assert bus.registers[1][Register.TORQUE_ENABLE] == 0
 
+
+
+def test_current_mode_zeroes_goal_current_before_torque_and_accepts_signed_currents():
+    driver, bus = make_driver((1, 2))
+    driver.open()
+    driver.set_operating_mode(OperatingMode.CURRENT)
+    assert all(bus.registers[motor_id][Register.OPERATING_MODE] == 0 for motor_id in (1, 2))
+    bus.registers[1][Register.GOAL_CURRENT] = 50
+
+    assert driver.enable_torque() == {}
+    first_enable = next(
+        index
+        for index, (_, address, _, value) in enumerate(bus.writes)
+        if address == Register.TORQUE_ENABLE and value == 1
+    )
+    zeroed = {
+        motor_id
+        for motor_id, address, _, value in bus.writes[:first_enable]
+        if address == Register.GOAL_CURRENT and value == 0
+    }
+    assert zeroed == {1, 2}
+
+    driver.command_currents({1: -15, 2: 10})
+    assert bus.registers[1][Register.GOAL_CURRENT] == (1 << 16) - 15
+    assert bus.registers[2][Register.GOAL_CURRENT] == 10
+    with pytest.raises(SafetyError, match="mode 3 or 5"):
+        driver.command_positions({1: 2048})
+    driver.close()
+
+
+def test_mode_change_requires_torque_off_and_currents_require_mode_zero():
+    driver, bus = make_driver((1,))
+    driver.open()
+    driver.enable_torque()
+    with pytest.raises(SafetyError, match="Disable torque"):
+        driver.set_operating_mode(OperatingMode.CURRENT)
+    with pytest.raises(SafetyError, match="mode 0"):
+        driver.command_currents({1: 5})
+    driver.close()
+
+
+def test_position_pd_configuration_leaves_current_and_ki_unchanged():
+    driver, bus = make_driver((2, 3))
+    with driver:
+        before = {i: (bus.registers[i][Register.CURRENT_LIMIT],
+                      bus.registers[i][Register.GOAL_CURRENT],
+                      bus.registers[i][Register.POSITION_I_GAIN]) for i in (2, 3)}
+        driver.configure_position_control(position_p_gain=450, position_d_gain=20)
+        for i in (2, 3):
+            assert bus.registers[i][Register.POSITION_P_GAIN] == 450
+            assert bus.registers[i][Register.POSITION_D_GAIN] == 20
+            assert (bus.registers[i][Register.CURRENT_LIMIT],
+                    bus.registers[i][Register.GOAL_CURRENT],
+                    bus.registers[i][Register.POSITION_I_GAIN]) == before[i]
+        assert {(address, size) for _, address, size, _ in bus.writes} == {(84, 2), (80, 2)}
+
+
+@pytest.mark.parametrize('field', ('position_p_gain', 'position_d_gain'))
+@pytest.mark.parametrize('value', (-1, 16384))
+def test_invalid_position_gain_rejects_entire_configuration_without_writes(field, value):
+    driver, bus = make_driver((2,))
+    with driver:
+        with pytest.raises(ConfigurationError):
+            driver.configure_position_control(current_limit=40, **{field: value})
+        assert bus.writes == []
+
+
+def test_pd_configuration_rejects_torque_enabled_outside_this_driver():
+    driver, bus = make_driver((2,))
+    bus.registers[2][Register.TORQUE_ENABLE] = 1
+    with driver:
+        with pytest.raises(SafetyError, match='Disable torque'):
+            driver.configure_position_control(position_d_gain=20)
+        assert bus.writes == []

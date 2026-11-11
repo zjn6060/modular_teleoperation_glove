@@ -1,5 +1,25 @@
-<?xml version='1.0' encoding='utf-8'?>
-<mujoco model="TeleGlove five-finger preview">
-  <include file="robot.xml" />
-  <statistic center="-0.07 0.015 0.045" extent="0.34" />
+<mujoco model="scene">
+    <include file="robot.xml" />
+
+    <visual>
+        <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+        <rgba haze="0.15 0.25 0.35 1" />
+        <global azimuth="160" elevation="-20" />
+    </visual>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512"
+            height="3072" />
+    </asset>
+
+    <worldbody>
+        <light pos="0 0 3.5" dir="0 0 -1" directional="true" />
+    </worldbody>
+
+    <!-- EF pivot lines parallel to the palm XY plane; all closed mates satisfied. -->
+    <keyframe>
+        <key name="ef_horizontal"
+            qpos="0 -0.20764309993034558 -0.3519774675862163 0.44976595541561765 0.4691158589502194 0.0486122628722044 0 0.20967165061746315 0.29087977981287577 -0.35350591333762127 -0.4269249629748865 -0.14989103699012626 0 -0.033190154891506264 -0.04592623470209109 0.054856083179047006 0.06576781113167758 0.019705080503301078 0 -0.1476192242566341 -0.21267065008493277 0.26179627514624787 0.34001139843970746 0.11260818442786868"
+            ctrl="0 0.20764309993034558 0 0.20967165061746315 0 0.1476192242566341 0 -0.033190154891506264" />
+    </keyframe>
 </mujoco>

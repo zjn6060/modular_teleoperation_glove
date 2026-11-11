@@ -1,0 +1,23 @@
+{
+  "bodies": 32,
+  "controls": 31,
+  "closed_revolute_connections": 10,
+  "simulation_seconds": 5.000000000000004,
+  "max_loop_error_m": 5.533625591941371e-05,
+  "driver_angles_rad": {
+    "index": 0.14999971217271735,
+    "middle": 0.14999999999999575,
+    "little": 0.1500000000000045,
+    "ring": 0.1499990008560755,
+    "thumb": 0.14999999999999925
+  },
+  "independent_angles_rad": {
+    "index_mcp_abduction": 0.05999999998080176,
+    "middle_mcp_abduction": 0.06000000000000003,
+    "little_mcp_abduction": 0.05999999999999999,
+    "ring_mcp_abduction": 0.05999999992191819,
+    "thumb_mcp_abduction": 0.05999999999999998,
+    "thumb_H": 0.05999999999999998
+  },
+  "warnings": []
+}
